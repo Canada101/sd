@@ -1,5 +1,4 @@
-class Narrative 
-{
+class Narrative {
 
 public :
 
