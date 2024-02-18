@@ -1,10 +1,16 @@
-# sd
-sd video game
+# Project Group 5 Video Game Read-Me
 
-# This is a heading
-This is a great project
+# How to Compile
+This game can be compiled with the following compilers:
+* clang
+* g++
 
-* Bullet 1
-* Bullet 2
+# Compatable OSes
+This game is compatible with both Windows and MacOS
 
-# This is another test
+# System Requirements
+This game is able to be run on any system capable of running C++
+
+# Library Requirements
+This game currently uses the Standard C++ Library
+
