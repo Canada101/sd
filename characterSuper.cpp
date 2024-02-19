@@ -6,6 +6,8 @@ class CharacterSuper{
 public:
     int health;
     int armor;
+    int strength;
+    int speed;
     string inventory;
 
     int getHealth(){
@@ -14,6 +16,14 @@ public:
 
     int getArmor(){
         return armor;
+    }
+
+    int getStrength(){
+        return strength;
+    }
+
+    int getSpeed(){
+        return speed;
     }
 
     string getInventory(){
