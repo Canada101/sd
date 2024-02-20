@@ -30,3 +30,54 @@ graph TD
     H --> I(Castle)
     
     I --> J(End Game)
+
+
+#Logical View
+
+```mermaid
+  classDiagram
+    class narrativeSuper {
+      + Id: Integer
+      + Name: String
+      - VienProducti()
+      + AddProducts()
+      + DeleteProducts()
+      + ModifyProduct()
+      + MakeShipment()
+      + ConfiruDelivery()
+    }
+
+    class Main {
+      - Id: String
+      + Name: String
+      + Address: String
+      + PhNo: Integer
+      + BuyProducts()
+      + ViewProducts()
+      - MakePayment()
+      + AddToCart()
+      + DeletefromCart()
+    }
+
+    class CharacterSuper{
+      + CustomerId: String
+      + Name: String
+      + CardType: String
+      + CardNo: String
+    }
+
+    class storyNarrative {
+      - Id: Integer
+      + Name: String
+      + Group: String
+      + Subgroup: String
+    }
+
+    class Main {
+      + GetRegistered()
+    }
+
+    narrativeSuper --> storyNarrative : Manage
+    Main --> narrativeSuper : Has
+    narrativeSuper --> CharacterSuper : Has
+```
