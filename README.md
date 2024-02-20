@@ -61,6 +61,10 @@ This game currently uses the Standard C++ Library
 
     }
 
+    class Wizard{
+
+    }
+
 
     Main --> NarrativeSuper : Has
     NarrativeSuper --> StoryNarrative : Has
@@ -68,6 +72,7 @@ This game currently uses the Standard C++ Library
     CharacterSuper <|-- Guardian 
     CharacterSuper <|-- Ranger
     CharacterSuper <|-- Swordsman
+    CharacterSuper <|-- Wizard
 ```
 
 # Process View
