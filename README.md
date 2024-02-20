@@ -20,13 +20,3 @@ graph TD
     B --> D{Swordsman}
     B --> E{Wizard}
     B --> F{Guardian}
-    
-    C --> G(Village)
-    D --> G
-    E --> G
-    F --> G
-    
-    G --> H(Forest)
-    H --> I(Castle)
-    
-    I --> J(End Game)
