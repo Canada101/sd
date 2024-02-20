@@ -65,6 +65,7 @@ This game currently uses the Standard C++ Library
 ```
 
 # Process View
+
 ```mermaid
 graph TD
     A(Start) --> B(Character Selection)
@@ -82,4 +83,4 @@ graph TD
     H --> I(Castle)
     
     I --> J(End Game)
-    ```
+```
