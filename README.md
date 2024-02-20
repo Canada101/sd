@@ -30,7 +30,7 @@ graph TD
     I --> J(End Game)
 
 
-#Logical View
+# Logical View
 
 ```mermaid
   classDiagram
