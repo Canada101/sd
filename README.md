@@ -91,20 +91,21 @@ graph TD
     
     J --> K(End Game)
 ```
+# Use Case 
 ```mermaid
-graph Use Case
+graph UC
   A(user) --> B(selects character)
   B --> C(story narrative)
 
-  A --> G(enters choice)
-  G --> H(story narrative)
+  A --> F(enters choice)
+  F --> C
 
-  H --> I(switch narrative)
-  G --> D(npc narrative)
-  G --> E(combat narrative)
+  G --> H(switch narrative)
+  F --> D(npc narrative)
+  F --> E(combat narrative)
 
-  D --> I
-  E --> I
+  D --> H
+  E --> H
 
 
 ```
