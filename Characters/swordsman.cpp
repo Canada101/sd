@@ -1,8 +1,8 @@
 #include "characterSuper.cpp"
 
-class SwordsMan : public CharacterSuper{
+class Swordsman : public CharacterSuper{
 public:
-    SwordsMan(){
+    Swordsman(){
         armor = 100;
         speed = 50;
         strength = 50;

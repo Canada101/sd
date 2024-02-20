@@ -18,50 +18,56 @@ This game currently uses the Standard C++ Library
 
 ```mermaid
   classDiagram
-    class narrativeSuper {
-      + Id: Integer
-      + Name: String
-      - VienProducti()
-      + AddProducts()
-      + DeleteProducts()
-      + ModifyProduct()
-      + MakeShipment()
-      + ConfiruDelivery()
+    class NarrativeSuper {
+
     }
 
-    class Main {
-      - Id: String
-      + Name: String
-      + Address: String
-      + PhNo: Integer
-      + BuyProducts()
-      + ViewProducts()
-      - MakePayment()
-      + AddToCart()
-      + DeletefromCart()
+    class StoryNarrative{
+
+    }
+
+    class Main { 
+     
     }
 
     class CharacterSuper{
-      + CustomerId: String
-      + Name: String
-      + CardType: String
-      + CardNo: String
+      -Health: Integer
+      -Armor: Integer
+      -Strength: Integer
+      -Speed: Integer
+      -Inventory: vector<String>
+      -SpecialAbilities: vector<String>
+      +GetHealth()
+      +GetArmor()
+      +GetStregth()
+      +GetSpeed()
+      +getSpecialAbilities()
+      +addSpecialAbilities()
+      +getInventory()
+      +addToInventory()
+      +loseHealth()
+      +gainHealth()
     }
 
-    class storyNarrative {
-      - Id: Integer
-      + Name: String
-      + Group: String
-      + Subgroup: String
+    class Guardian{
+
     }
 
-    class Main {
-      + GetRegistered()
+    class Swordsman{
+
     }
 
-    narrativeSuper --> storyNarrative : Manage
-    Main --> narrativeSuper : Has
-    narrativeSuper --> CharacterSuper : Has
+    class Ranger{
+
+    }
+
+
+    Main --> NarrativeSuper : Has
+    NarrativeSuper --> StoryNarrative : Has
+    StoryNarrative --> CharacterSuper : Has
+    CharacterSuper <|-- Guardian 
+    CharacterSuper <|-- Ranger
+    CharacterSuper <|-- Swordsman
 ```
 
 # Process View
@@ -80,7 +86,8 @@ graph TD
     F --> G
     
     G --> H(Forest)
-    H --> I(Castle)
+    H --> I(Lake)
+    I --> J(Castle)
     
-    I --> J(End Game)
+    J --> K(End Game)
 ```
