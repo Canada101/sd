@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 class CharacterSuper{
@@ -8,7 +9,8 @@ public:
     int armor;
     int strength;
     int speed;
-    string inventory;
+    vector<string> inventory;
+    vector<string> specialAbilities;
 
     int getHealth(){
         return health;
@@ -26,8 +28,20 @@ public:
         return speed;
     }
 
-    string getInventory(){
+    vector<string> getSpecialAbilities(){
+        return specialAbilities;
+    }
+
+    void addSpecialAbility(string item){
+        specialAbilities.push_back(item);
+    }
+
+    vector<string> getInventory(){
         return inventory;
+    }
+
+    void addToInventory(string item){
+        inventory.push_back(item);
     }
 
     void loseHealth(int damage){
@@ -39,12 +53,4 @@ public:
     }
 };
 
-class Ranger: public CharacterSuper{
-public:
-    Ranger(){
-        health = 100;
-        armor = 50;
-        inventory = "Bow and arrow";
-    }
-};
 
