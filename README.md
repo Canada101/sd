@@ -98,15 +98,9 @@ graph TD
 ```
 # Use Case 
 ```mermaid
-sequenceDiagram
-    participant A as User
-    participant B
-    participant C as Story
-    participant D as NPC
-    participant E as Combat
-    participant F
-    participant G
-    participant H
+graph TD
+  A(user) --> B(selects character)
+  B --> C(story narrative)
 
     A->>B: Selects character
     B->>C: Story narrative
