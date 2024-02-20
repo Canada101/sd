@@ -98,7 +98,7 @@ graph TD
 ```
 # Use Case 
 ```mermaid
-graph UC
+graph TD
   A(user) --> B(selects character)
   B --> C(story narrative)
 
