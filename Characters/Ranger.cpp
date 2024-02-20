@@ -13,6 +13,6 @@ public:
         addToInventory("bow and arrow");
         addToInventory("knife");
         addSpecialAbility("stealth");
-        addSpecialAbility("laguage proficiency");
+        addSpecialAbility("language proficiency");
     }
 };
