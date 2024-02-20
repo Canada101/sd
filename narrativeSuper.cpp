@@ -1,5 +1,15 @@
-class Narrative {
+#include <iostream>
+using namespace std;
 
-public :
+class NarrativeSuper{
+
+public:
+    NarrativeSuper(){
+
+    };
+
+    void startMenu(){
+        cout << ("Hello") << endl;
+    }
 
 };
