@@ -52,5 +52,3 @@ public:
         health+=recovery;
     }
 };
-
-
