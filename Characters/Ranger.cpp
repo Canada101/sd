@@ -7,6 +7,7 @@ using namespace std;
 class Ranger: public CharacterSuper{
 public:
     Ranger(){
+        health = 100;
         armor = 50;
         strength = 25;
         speed = 100;

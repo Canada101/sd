@@ -5,7 +5,7 @@ using namespace std;
 
 class CharacterSuper{
 public:
-    int health = 100;
+    int health;
     int armor;
     int strength;
     int speed;
