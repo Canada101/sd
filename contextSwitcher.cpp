@@ -1,4 +1,5 @@
 #include <iostream>
+#include "narrativeStory.cpp"
 using namespace std;
 
 class ContextSwitcher 
