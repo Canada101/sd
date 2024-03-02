@@ -20,7 +20,7 @@ class NarrativeStory
         return playerC;
     };
 
-    int storyJumpTo (int locationInStory)
+    void storyJumpTo (int locationInStory)
     {
         placeInStory = locationInStory;
     };
@@ -34,7 +34,15 @@ class NarrativeStory
         } else if(placeInStory == 1)
         {
             cout << "the story progresses" << endl;
+            int input;
+            cin >> input;
+            if (input == 2){
+                ContextSwitcher::switchContext(2);
+            } else if (input == 3){
+                ContextSwitcher::switchContext(3);
+            };
         };
+
      placeInStory ++;
     };
 

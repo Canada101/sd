@@ -1,19 +1,14 @@
-#include <iostream>
-using namespace std;
+#include"contextSwitcher.h"
 
-class ContextSwitcher 
+int ContextSwitcher::currentContext;
+
+void ContextSwitcher::switchContext(int newContext) 
 {
-    public:
-    //1 = main story 2 = npc dialogue 3 = combat
-    int context;
-    ContextSwitcher()
-    {
+    currentContext = newContext;
+    
+};
 
-    }; 
-    int changeContext(int contextType)
-    {
-
-        return 0;
-    };
-
+int ContextSwitcher::getContext() 
+{
+    return currentContext;
 };
