@@ -1,32 +1,14 @@
-#include <iostream>
-#include "narrativeStory.cpp"
-using namespace std;
+#include"contextSwitcher.h"
 
-class ContextSwitcher 
+int ContextSwitcher::currentContext;
+
+void ContextSwitcher::switchContext(int newContext) 
 {
-    public:
-    //1 = main story 2 = npc dialogue 3 = combat
-    int context;
-    int input;
-    ContextSwitcher()
-    {
-        input = 1;
-        NarrativeSuper story;
-        int player = story.startMenu();
+    currentContext = newContext;
     
-        NarrativeStory mainStory(player);
-        while(1){
-            mainStory.moveThroughStory();
-            cin >> input;
-            if(input != 1){
-                break;
-            }
-        }
-    }; 
-    int changeContext(int contextType)
-    {
+};
 
-        return 0;
-    };
-
+int ContextSwitcher::getContext() 
+{
+    return currentContext;
 };

@@ -102,23 +102,13 @@ graph TD
   A(user) --> B(selects character)
   B --> C(story narrative)
 
-    A->>B: Selects character
-    B->>C: Story narrative
-    activate C
+  A --> F(enters choice)
+  F --> C
 
-    A->>F: Enters choice
-    F->>C: Choice processed
-    deactivate C
+  G --> H(switch narrative)
+  F --> D(npc narrative)
+  F --> E(combat narrative)
 
-    G->>H: Switch narrative
-    F->>D: NPC narrative (optional)
-    F->>E: Combat narrative (optional)
-    activate D
-    activate E
-
-    D->>H: NPC response
-    E->>H: Combat outcome
-    deactivate D
-    deactivate E
-
+  D --> H
+  E --> H
 ```
