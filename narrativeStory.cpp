@@ -20,7 +20,7 @@ class NarrativeStory
         return playerC;
     };
 
-    int storyJumpTo (int locationInStory)
+    void storyJumpTo (int locationInStory)
     {
         placeInStory = locationInStory;
     };

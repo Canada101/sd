@@ -1,16 +1,21 @@
+#ifndef __CHARACTERSUPER
+#define __CHARACTERSUPER
 #include <iostream>
 #include <string>
 #include <vector>
+#include "../Inventory/Weapon.cpp"
+#include "../Inventory/Inventory.cpp"
+
 using namespace std;
 
 class CharacterSuper{
 public:
-    int health = 100;
-    int armor;
-    int strength;
-    int speed;
-    vector<string> inventory;
-    vector<string> specialAbilities;
+    int health = 0;
+    int armor = 0;
+    int strength = 0;
+    int speed = 0;
+    Weapon weapon = Weapon(WeaponType::Knife);
+    Inventory inventory = Inventory();
 
     int getHealth(){
         return health;
@@ -28,20 +33,12 @@ public:
         return speed;
     }
 
-    vector<string> getSpecialAbilities(){
-        return specialAbilities;
-    }
-
-    void addSpecialAbility(string item){
-        specialAbilities.push_back(item);
-    }
-
-    vector<string> getInventory(){
+    Inventory getInventory(){
         return inventory;
     }
 
     void addToInventory(string item){
-        inventory.push_back(item);
+
     }
 
     void loseHealth(int damage){
@@ -51,4 +48,11 @@ public:
     void gainHealth(int recovery){
         health+=recovery;
     }
+
+    void setWeapon(Weapon weapon){
+        this->weapon.equipped = false;
+        this->weapon = weapon;
+        this->weapon.equipped = true;
+    }
 };
+#endif
