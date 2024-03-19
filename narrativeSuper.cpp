@@ -1,5 +1,0 @@
-class Narrative {
-
-public :
-
-};

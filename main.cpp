@@ -1,11 +1,8 @@
 #include <iostream>
-#include "Characters/characterSuper.cpp"
-#include "Characters/Ranger.cpp"
-#include "narrativeSuper.cpp"
+#include "Narrative.cpp"
 using namespace std;
 
 int main(){
-    Ranger ranger;
-    cout << ranger.getSpeed() << endl;
+    Narrative narrative;
     return 0;
 }
