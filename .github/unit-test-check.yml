@@ -1,0 +1,16 @@
+name: Running Unit Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  unit-tests:
+    runs-on: macos-latest
+    
+    steps:
+    - name: Compile code
+      run: |
+        g++ -std=c++17 -g *.cpp -o test
+      
