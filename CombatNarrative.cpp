@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "Characters.cpp"
 using namespace std;
 
@@ -16,6 +17,7 @@ class CombatNarrative{
        
         bool won = false;
         while(1){
+            cout << endl;
             cout << "Dragon's health is " + to_string(dragonHealth) << endl;
             cout << "Your health is " + to_string(character->getHealth()) << endl;
 
@@ -23,12 +25,13 @@ class CombatNarrative{
             cout << "1. Attack the dragon with your weapon\n2. Heal yourself\n3. Hide" << endl;
             cin >> choice;
             if(choice==1){
-                cout << "Your blow lands! The dragon loses 25 health" << endl;
-                dragonHealth-=25;
+                int damageToDragon = (int)(25*(character->getStrength()/100.0));
+                cout << "Your blow lands! The dragon loses " + to_string(damageToDragon) + " health." << endl;
+                dragonHealth-=damageToDragon;
             }
             else if(choice==2){
                 cout << "You patch up your wounds. You gain 25 health" << endl;
-                if((character->getHealth() +25)<100){
+                if((character->getHealth()+25)<100){
                     character->gainHealth(25);
                 }
                 else{
@@ -36,8 +39,9 @@ class CombatNarrative{
                 }
             }
             else if(choice==3){
-                cout << "You attempt to run away. The dragon attacks and you lose 20 health" << endl;
-                character->loseHealth(20);
+                int damageToCharacter = (int)(25*(1-(character->getArmor()/100.0)))+5;
+                cout << "You attempt to run away. The dragon attacks and you lose " + to_string(damageToCharacter) + " health." << endl;
+                character->loseHealth(damageToCharacter);
             }
 
             if(character->getHealth()<=0){
@@ -47,7 +51,8 @@ class CombatNarrative{
             }
             else if(dragonHealth<=0){
                 won = true;
-                cout << "You defeat the dragon!" << endl;
+                cout << "You defeat the dragon! Your armor has been increased." << endl;
+                character->gainArmor(10);
                 break;
             }
         }
@@ -67,8 +72,9 @@ class CombatNarrative{
             cout << "1. Attack the lake monster with your weapon\n2. Heal yourself\n3. Hide" << endl;
             cin >> choice;
             if(choice==1){
-                cout << "Your blow lands! The lake monster loses 25 health" << endl;
-                lakeMonsterHealth-=25;
+                int damageToLakeMonster = (int)(25*(character->getStrength()/100.0));
+                cout << "Your blow lands! The dragon loses " + to_string(damageToLakeMonster) + " health." << endl;
+                lakeMonsterHealth-=damageToLakeMonster;
             }
             else if(choice==2){
                 cout << "You patch up your wounds. You gain 25 health" << endl;
@@ -91,7 +97,8 @@ class CombatNarrative{
             }
             else if(lakeMonsterHealth<=0){
                 won = true;
-                cout << "You defeated the lake monster!" << endl;
+                cout << "You defeated the lake monster! Your strength has been increased" << endl;
+                character->gainStrength(10);
                 break;
             }
         }
@@ -111,8 +118,9 @@ class CombatNarrative{
             cout << "1. Attack the lake monster with your weapon\n2. Heal yourself\n3. Hide" << endl;
             cin >> choice;
             if(choice==1){
-                cout << "Your blow lands! The king loses 25 health" << endl;
-                kingHealth-=25;
+                int damageToKing = (int)(25*(character->getStrength()/100.0));
+                cout << "Your blow lands! The dragon loses " + to_string(damageToKing) + " health." << endl;
+                kingHealth-=damageToKing;
             }
             else if(choice==2){
                 cout << "You patch up your wounds. You gain 25 health" << endl;

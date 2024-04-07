@@ -74,6 +74,18 @@ public:
     void gainHealth(int recovery){
         health+=recovery;
     }
+
+    void gainStrength(int amountGained){
+        if(strength+amountGained<100){
+            strength+=amountGained;
+        }
+    }
+
+    void gainArmor(int amountGained){
+        if(armor+amountGained<100){
+            armor+=amountGained;
+        }
+    }
 };
 
 class Guardian: public CharacterSuper{
