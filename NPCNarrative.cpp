@@ -8,96 +8,125 @@ class NarrativeNPC{
 
     void talkToWoodsCharacter(){
         int choice = 0;
+        cout << "\nYou have decided to interact with the stranger in the forest." << endl;
+        cout << "\nStranger: 'Greetings! What brings you here?'" << endl;
+        cout << "1. I'm seeking adventure.\n2. I'm looking for my way to the castle...I want to speak to the King.\n3. Why are you here?" << endl;
+        cin >> choice;
 
         while(1){
-            cout << "You have decided to interact with the stranger in the forest." << endl;
-            cout << "He asks you where you are going." <<endl;
-            cout << "1. Remain truthful, tell him you are seeking revenge against the king.\n2. Lie, state you are lost and trying to find your way to the market.\n3. Leave the conversation." << endl;
-            cin >> choice;
-
             if(choice == 1){
-                cout << "He seems shocked by your honesty. He offers to help. Do you accept?" << endl;
-                cout << "1. Ask how he may help. 2. Say no and leave." << endl;
+                cout << "Stranger: 'Adventure, you say? Well... I may have a favor to ask of you.\nYou see, there's been a horrific dragon terrorizing our villages for nearly a decade.\nThe King chooses not to do anything about it! But you, you seem brave...'" << endl;
+                cout << "1. Tell me more about this dragon.\n2. Leave the conversation to look for the dragon." << endl;
                 cin >> choice;
 
                 if(choice == 1){
-                    cout << "It was a trick!\nAs you walk toward him, he pushes and threatens you to go back to your village.\nYou lose 25 armor." <<endl;
-                    cout << "You quickly retreat and lose him in the forest." << endl;
+                    cout << "Stranger: 'The dragon is violent. Merciless. It has no regard for mere human beings.\nI'm not sure what kind of adventure you are seeking, but be careful of this creature.\nRemain aggressive, and you just may take it down once and for all...'" << endl;
                     break;
-                }else if(choice == 2){
-                    cout << "You could see something was off about him.\nYou threaten him to stay out of your way and you continue walking down the path."<<endl;
+                }if(choice == 2){
                     break;
                 }
+
             }else if(choice == 2){
-                cout << "The stranger was wary of you at first, but brushed it off." <<endl;
-                cout << "He offers you a small piece of armor, since the forest can be dangerous." << endl;
-                cout << "1. Take the armor and say thank you.\n2. Take the armor from him and continue your way down the path.\n3. Say no and leave." << endl;
+                cout << "Stranger: 'That wretched King... He has never been of any help for our villages.\nA dragon has been terrorizing our villages for nearly a decade. And the King has been silent.'" << endl;
+                cout << "1. Why hasn't the King done anything?\n2. Leave the conversation to look for the dragon." << endl;
                 cin >> choice;
+
                 if(choice == 1){
-                    cout << "The stranger appreciates your politeness and gives you the piece of armor.\nYou now have 10 extra armor." << endl;
+                    cout << "Stranger: 'The King only looks after himself and those close to him. He has no regards for us poor individuals in these villages.\nHe's been the worst King I've ever seen in my lifetime, and I've lived a very long life so far...'" << endl;
+                    cout << "\nYou leave to help these villages and look for the dragon." << endl;
                     break;
                 }else if(choice == 2){
-                    cout << "The stranger doesn't appreciate your rudeness.\nHe takes the armor away from your hands and pushes you.\nYou lose 25 armor."<<endl;
-                    break;
-                }else if(choice == 3){
-                    cout << "The stranger looks a little confused, but shrugs it off. You continue down the path."<<endl;
                     break;
                 }
+
             }else if(choice == 3){
-                cout << "You get a bad feeling about this stranger, and instead decide to continue down the path." << endl;
-                break;
+                cout << "Stranger: 'I prefer to hide out in these trees from the violent dragon just further down this path.\nIt is the only way I feel safe.'" << endl;
+                cout << "1. Tell me more about this dragon.\n2. Leave the conversation to look for the dragon." << endl;
+                cin >> choice;
+
+                if(choice == 1){
+                    cout << "Stranger: 'The dragon is violent. It only knows terror and violence.\nHowever, it seems if you are able to defeat it... You do receive a reward in the end.'" << endl;
+                    cout << "\nYou leave to look for the dragon." << endl;
+                    break;
+                }else if(choice == 2){
+                    break;
+                }
+
             }
         }
     }
 
     void talkToLakeCharacter(){
         int choice = 0;
-
-        cout << "You have decided to speak to the fisherman. He notices you, and waves." << endl;
-        cout << "1. Ask him if he's caught any big fish.\n2. Take his box of previously caught fish for replenishment.\n3. Leave." << endl;
+        cout << "\nYou have decided to speak to the fisherman." << endl;
+        cout << "\nFisherman: 'Hello, there! Come here to fish?'" << endl;
+        cout << "1. I'm just passing through.\n2. Tell me about the lake." << endl;
         cin >> choice;
 
         while(1){
             if(choice == 1){
-                cout << "The fisherman smiles and appreciates your politeness.\nHe says yes, and offers you the fish. Do you accept?" << endl;
-                cout << "1. Accept the fish. 2. Say no thank you, and walk away." << endl;
-                cin >> choice;
-
+                cout << "Fisherman: 'I see. Well, be careful! There's been sightings of a huge lake monster, right along these paths.'" << endl;
+                cout << "1. Why are you here, then?\n2. Leave the conversation and look for the lake monster." << endl;
+                
                 if(choice == 1){
-                    cout << "You take the fish and eat it.\n...\nThe fish was delicious! You have gained 10 health.\nYou continue down the path."<<endl;
+                    cout << "Fisherman: 'I need to feed myself and my family somehow. The King has clearly shown he is nothing but\nuseless when it comes to our safety and basic needs.'" << endl;
+                    cout << "You feel sorry for the fisherman, and continue to look for the lake monster." << endl;
                     break;
                 }else if(choice == 2){
-                    cout << "He seems offended, and as you walk away, he uses his rod to snatch a piece of your armor.\nYou have lost 25 armor."<<endl;
                     break;
                 }
+
             }else if(choice == 2){
-                cout << "The fisherman is angry at what you've done! He trips you with his rod and begins to hit you.\nEventually, you break free and are able to retreat.\nYou have lost 45 health."<<endl;
-                break;
-            }else if(choice == 3){
-                cout << "You felt wary of this fisherman and decide to continue on the path. He shrugs it off." << endl;
-                break;
+                cout << "Fisherman: 'It used to be a peaceful place...Unfortunately, it's been overrun by a giant lake monster, just further down this path.\nIt's affected people's nearby homes, and food supplies! The monster eats all the fish before we get to it!\nSadly, the King doesn't seem to care.'" << endl;
+                cout << "1. Why do you think the King doesn't care?\n2. Leave the conversation and look for the lake monster." << endl;
+
+                if(choice == 1){
+                    cout << "Fisherman: 'He is simply downright selfish. But, it's alright, we make it work... I do hope you are brave enough to confront this creature.\nProvide us some peace.'" << endl;
+                    cout << "You feel sorry for the fisherman, and continue to look for the lake monster." << endl;
+                    break;
+                }else if(choice == 2){
+                    break;
+                }
+
             }
         }
     }
 
     void talkToCastleCharacter(){
         int choice = 0;
-
-        cout << "You have decided to talk to the former night and see what he has to say." << endl;
-        cout << "1. Ask him about his experience as a knight.\n2. Threaten him to give you information.\n3. Leave the conversation." << endl;
+        cout << "\nYou have decided to talk to the former night and see what he has to say." << endl;
+        cout << "\nKnight: 'Why are you here?'" << endl;
+        cout << "1. I'm here to fight the King once and for all.\n2. I should ask you the same question." << endl;
         cin >> choice;
 
         while(1){
             if(choice == 1){
-                cout << "The former knight tells you he was forced to resign from his position\nafter forgetting to light every lantern in the main room.\nIt may be valuable to know the king has a fear of the dark."<<endl;
-                break;
+                cout << "Knight: 'You're here to defeat the King!? Finally! Someone is brave enough to do so. Let me offer you some advice...'" << endl;
+                cout << "1. I do not need advice. I will fight the King head-on.\n2. Tell me more." << endl;
+                cin >> choice;
+
+                if(choice == 1){
+                    cout << "You leave before the former knight could say anything else." << endl;
+                    break;
+                }else if(choice == 2){
+                    cout << "Knight: 'The King can be aggressive... You must match that energy. Whatever you do, do not try and run away.\nThe King is too quick, he will get you.'" << endl;
+                    cout << "You leave more confident to confront the King." << endl;
+                    break;
+                }
+
             }else if(choice == 2){
-                cout << "The former knight looks a bit offended at the threat, and pushes you into the castle gate.\nYou lose 10 armor."<<endl;
-                cout << "After he feels satisfied with watching you appear fearful, he informs you to never\ntry to outrun the king. He will get you." << endl;
-                break;
-            }else if(choice == 3){
-                cout << "The former knight admires your confidence to not acquire assistance. You continue down the path."<<endl;
-                break;
+                cout << "Knight: 'Clever. Truly, I have nowhere to go since the King banished me from my role as a Knight.\nHe's a horrible King, the worst these villages have ever had. He shows no mercy to the civilians that reside here.'" << endl;
+                cout << "1. Do you have any advice for when I confront him?\n2. Leave and look for the King." << endl;
+                cin >> choice;
+
+                if(choice == 1){
+                    cout << "Knight: 'The King can be aggressive. Whatever you do, do not try and run away.\nHe is quick, and he will get you.'" << endl;
+                    cout << "You leave more confident to confront the King." << endl;
+                    break;
+                }else if(choice == 2){
+                    break;
+                }
+
             }
         }
     }
