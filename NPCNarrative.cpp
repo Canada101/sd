@@ -33,7 +33,7 @@ class NarrativeNPC{
 
                 if(choice == 1){
                     cout << "Stranger: 'The King only looks after himself and those close to him. He has no regards for us poor individuals in these villages.\nHe's been the worst King I've ever seen in my lifetime, and I've lived a very long life so far...'" << endl;
-                    cout << "\nYou leave to help these villages and look for the dragon." << endl;
+                    cout << "\nYou leave to help these villages." << endl;
                     break;
                 }else if(choice == 2){
                     break;
@@ -67,10 +67,10 @@ class NarrativeNPC{
             if(choice == 1){
                 cout << "Fisherman: 'I see. Well, be careful! There's been sightings of a huge lake monster, right along these paths.'" << endl;
                 cout << "1. Why are you here, then?\n2. Leave the conversation and look for the lake monster." << endl;
-                
+                cin >> choice;
                 if(choice == 1){
                     cout << "Fisherman: 'I need to feed myself and my family somehow. The King has clearly shown he is nothing but\nuseless when it comes to our safety and basic needs.'" << endl;
-                    cout << "You feel sorry for the fisherman, and continue to look for the lake monster." << endl;
+                    cout << "You feel sorry for the fisherman." << endl;
                     break;
                 }else if(choice == 2){
                     break;
@@ -79,10 +79,10 @@ class NarrativeNPC{
             }else if(choice == 2){
                 cout << "Fisherman: 'It used to be a peaceful place...Unfortunately, it's been overrun by a giant lake monster, just further down this path.\nIt's affected people's nearby homes, and food supplies! The monster eats all the fish before we get to it!\nSadly, the King doesn't seem to care.'" << endl;
                 cout << "1. Why do you think the King doesn't care?\n2. Leave the conversation and look for the lake monster." << endl;
-
+                cin >> choice;
                 if(choice == 1){
                     cout << "Fisherman: 'He is simply downright selfish. But, it's alright, we make it work... I do hope you are brave enough to confront this creature.\nProvide us some peace.'" << endl;
-                    cout << "You feel sorry for the fisherman, and continue to look for the lake monster." << endl;
+                    cout << "You feel sorry for the fisherman." << endl;
                     break;
                 }else if(choice == 2){
                     break;
@@ -110,7 +110,7 @@ class NarrativeNPC{
                     break;
                 }else if(choice == 2){
                     cout << "Knight: 'The King can be aggressive... You must match that energy. Whatever you do, do not try and run away.\nThe King is too quick, he will get you.'" << endl;
-                    cout << "You leave more confident to confront the King." << endl;
+                    cout << "You leave more confident." << endl;
                     break;
                 }
 
@@ -121,7 +121,7 @@ class NarrativeNPC{
 
                 if(choice == 1){
                     cout << "Knight: 'The King can be aggressive. Whatever you do, do not try and run away.\nHe is quick, and he will get you.'" << endl;
-                    cout << "You leave more confident to confront the King." << endl;
+                    cout << "You leave more confident." << endl;
                     break;
                 }else if(choice == 2){
                     break;

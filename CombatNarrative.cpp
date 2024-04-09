@@ -66,14 +66,14 @@ class CombatNarrative{
         bool won = false;
         while(1){
             cout << "Lake monster's health is " + to_string(lakeMonsterHealth) << endl;
-            cout << "Your health is " + to_string(lakeMonsterHealth) << endl;
+            cout << "Your health is " + to_string(character->getHealth()) << endl;
 
             cout << "Choose your next action:" << endl;
             cout << "1. Attack the lake monster with your weapon\n2. Heal yourself\n3. Hide" << endl;
             cin >> choice;
             if(choice==1){
                 int damageToLakeMonster = (int)(25*(character->getStrength()/100.0));
-                cout << "Your blow lands! The dragon loses " + to_string(damageToLakeMonster) + " health." << endl;
+                cout << "Your blow lands! The lake monster loses " + to_string(damageToLakeMonster) + " health." << endl;
                 lakeMonsterHealth-=damageToLakeMonster;
             }
             else if(choice==2){
@@ -115,11 +115,11 @@ class CombatNarrative{
             cout << "Your health is " + to_string(character->getHealth()) << endl;
 
             cout << "Choose your next action:" << endl;
-            cout << "1. Attack the lake monster with your weapon\n2. Heal yourself\n3. Hide" << endl;
+            cout << "1. Attack the king with your weapon\n2. Heal yourself\n3. Hide" << endl;
             cin >> choice;
             if(choice==1){
                 int damageToKing = (int)(25*(character->getStrength()/100.0));
-                cout << "Your blow lands! The dragon loses " + to_string(damageToKing) + " health." << endl;
+                cout << "Your blow lands! The king loses " + to_string(damageToKing) + " health." << endl;
                 kingHealth-=damageToKing;
             }
             else if(choice==2){

@@ -67,6 +67,10 @@ public:
         inventory.push_back(item);
     }
 
+    void removeFromInventory(){ //removes the last object from inventory
+        inventory.pop_back();
+    }
+
     void loseHealth(int damage){
         health-=damage;
     }
