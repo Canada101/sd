@@ -100,7 +100,7 @@ class Narrative{
                     haveMap = true;
                     cout << "\nIts a map that has the location of a auspicious lake and its description says that bathing in the lake will give\nyou superpowers but there is skull sign drawn on the lake." << endl;
                     cout << "With the greed of getting a super power, you are heading towards the direction of lake.\n" << endl;
-                    character->addToInventory("Map");
+                    character->addWeapons(Map);
                 }else{
                     cout << "\nYou ignored the paper and are heading in a random direction." << endl;
                 }
@@ -147,7 +147,7 @@ class Narrative{
                         if(choice == 1){
                             character->gainHealth(50);
                         }else{
-                            character->addToInventory("Orb");
+                            character->addWeapons(Orb);
                             character->printStats();
                             haveOrb = true;
                         }
@@ -182,7 +182,7 @@ class Narrative{
                     cin >> choice;
                     if(choice == 1){
                         character->gainHealth(50);
-                        character->removeFromInventory();
+                        //character->inventory.discardWeapon(Weapon w);
                         character->printStats();
                     }
                 }

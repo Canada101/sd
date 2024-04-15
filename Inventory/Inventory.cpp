@@ -4,13 +4,14 @@
 #include <vector>
 #include <string>
 #include "Weapon.cpp"
+#include "SpecialAbility.cpp"
 
 using namespace std;
 
 class Inventory{
 private:
     vector<Weapon> Weapons;
-    //vector<string> SpecialAbilites; 
+    vector<SpecialAbility> Specials; 
     int inventoryCount = 0;
 
 public:
@@ -52,18 +53,43 @@ public:
     }
 
     void discardWeapon(Weapon w){
-        for (vector<Weapon>::iterator i = Weapons.begin(); i != Weapons.end(); i++)
-        {
-            if(w.GetName() == i->GetName()){
+        for (auto i = Weapons.begin(); i != Weapons.end(); ++i) {
+            if (i->GetName() == w.GetName()) {
                 Weapons.erase(i);
-                return;
+                break;
+                }
             }
+            cout<< "Couldn't find " << w.GetName() << " to discard!" << endl;
         }
-        cout<< "Couldn't find " << w.GetName() << " to discard!" << endl;
-    }
 
     bool isEmpty(){
         return inventoryCount == 0;
     }
+
+   void displaySpecials(){
+        cout << "=============List of Special Abilities=============" << endl;
+        for (int i = 0; i < Specials.size(); i++)
+        {
+            cout << Specials[i].GetName() << (Specials[i].used ? " avaliable": " ") << endl;
+        }
+    }
+
+    void addSpecial(SpecialAbility s){
+        if(isFull()) {
+            cout<< "Inventory is now full!" << endl;
+            return;
+        }
+        Specials.push_back(s);
+        inventoryCount++;
+    }
+
+    const vector<Weapon> & getWeapons() const {
+        return Weapons;
+    }
+
+    const vector<SpecialAbility>& getSpecials() const {
+        return Specials;
+    }
+
 };
 #endif

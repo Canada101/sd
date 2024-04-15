@@ -4,7 +4,7 @@
 
 using namespace std;
 
-enum WeaponType{BowandArrow, Cloak, HeavenSlasher, Knife, Manual, Shield, Spear, Wand};
+enum WeaponType{BowandArrow, Cloak, HeavenSlasher, Knife, Manual, Shield, Spear, Wand, Map, Orb};
 
 class Weapon
 {
@@ -48,6 +48,12 @@ public:
         case Wand:
             return "Wand";
             break;
+        case Map:
+            return "Map";
+            break;
+        case Orb:
+            return "Orb";
+            break;
         }
     }
 
@@ -71,6 +77,9 @@ public:
             break;
             case Wand: strength = 85, rarity = "Mythical";
             break;
+            case Map: strength = 0, rarity = "Common";
+            break;
+            case Orb: strength = 0, rarity = "Common";
             }
         }
 };

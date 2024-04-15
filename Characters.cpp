@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Inventory/Weapon.cpp"
+#include "Inventory/Inventory.cpp"
+#include "Inventory/SpecialAbility.cpp"
 using namespace std;
 
 class CharacterSuper{
@@ -9,8 +12,7 @@ public:
     int armor;
     int strength;
     int speed;
-    vector<string> inventory;
-    vector<string> specialAbilities;
+    Inventory inventory;
 
     int getHealth(){
         return health;
@@ -32,44 +34,60 @@ public:
         return speed;
     }
 
-    vector<string> getSpecialAbilities(){
-        return specialAbilities;
+    const vector<Weapon> & getWeapons() const {
+        return inventory.getWeapons();
     }
 
-    void addSpecialAbility(string item){
-        specialAbilities.push_back(item);
+    const vector<SpecialAbility> & getSpecials() const {
+        return inventory.getSpecials();
     }
 
-    vector<string> getInventory(){
+    void addSpecialAbility(SpecialAbility special){
+        inventory.addSpecial(special);
+    }
+
+    void displayInventory(){
+        inventory.displayWeapons();
+        inventory.displaySpecials();
+    }
+
+    void addWeapons(Weapon weapon){
+        inventory.add(weapon);
+    }
+
+
+    Inventory getInventory(){
         return inventory;
+    }
+
+    void setWeapon(Weapon weapon){
+    //     this->weapon.equipped = false;
+    //     this->weapon = weapon;
+    //     this->weapon.equipped = true;
     }
 
     void printStats(){
         cout << "Armor: " + to_string(armor) << endl;
         cout << "Strength: " + to_string(strength) << endl;
         cout << "Speed: " + to_string(speed) << endl;
-        
-        cout << "Inventory: ";
-        for(auto item: inventory){
-            cout << item + " ";
-        }
-        cout << endl;
-
-        cout << "Special Abilities: ";
-        for(auto ability: specialAbilities){
-            cout << ability + " ";
-        }
-        cout << endl;
-        cout << endl;
+        displayInventory();
     }
 
-    void addToInventory(string item){
-        inventory.push_back(item);
-    }
+   void discardWeapon(Weapon weapon){
+        inventory.discardWeapon(weapon);
+   }
 
-    void removeFromInventory(){ //removes the last object from inventory
-        inventory.pop_back();
-    }
+   bool WeaponsEmpty(){
+    return inventory.isEmpty();
+   }
+
+   bool WeaponsFull(){
+    return inventory.isFull();
+   }
+
+   void swapWeapons(Weapon w1, Weapon w2){
+    inventory.swapWeapons(w1,w2);
+   }
 
     void loseHealth(int damage){
         health-=damage;
@@ -99,10 +117,10 @@ public:
         armor = 75;
         strength = 100;
         speed = 25;
-        addToInventory("spear");
-        addToInventory("shield");
-        addSpecialAbility("combat");
-        addSpecialAbility("blocking");
+        inventory.add(Spear);
+        inventory.add(Shield);
+        inventory.addSpecial(Blocking);
+        // addSpecialAbility("blocking");
     }
 };
 
@@ -113,10 +131,10 @@ public:
         armor = 50;
         strength = 25;
         speed = 100;
-        addToInventory("bow and arrow");
-        addToInventory("knife");
-        addSpecialAbility("stealth");
-        addSpecialAbility("language proficiency");
+        inventory.add(BowandArrow);
+        inventory.add(Knife);
+        inventory.addSpecial(Stealth);
+        //addSpecialAbility("language proficiency");
     }
 };
 
@@ -127,9 +145,9 @@ public:
         armor = 100;
         speed = 50;
         strength = 50;
-        addToInventory("Heaven Slasher");
-        addToInventory("Manual");
-        addSpecialAbility("Killer Move");
+        inventory.add(HeavenSlasher);
+        inventory.add(Manual);
+        inventory.addSpecial(KillerMove);
     }
 };
 
@@ -140,8 +158,8 @@ public:
         armor = 25;
         strength = 50;
         speed = 75;
-        addToInventory("wand");
-        addToInventory("cloak");
-        addSpecialAbility("fireball");
+        inventory.add(Wand);
+        inventory.add(Cloak);
+        inventory.addSpecial(Fireball);
     }
 };
