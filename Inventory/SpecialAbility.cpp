@@ -4,14 +4,13 @@
 
 using namespace std;
 
-enum SpecialAbilities{Fireball, KillerMove, Stealth, Blocking};
+enum SpecialAbilities{Fireball, KillerMove, Stealth, Blocking, Map, Orb};
 
 class SpecialAbility
 {
 public:
     SpecialAbilities s;
-    //int strength;
-    string descripition;
+    string description;
     bool used; 
 
     SpecialAbility(SpecialAbilities sa) {
@@ -36,6 +35,12 @@ public:
         case Blocking:
             return "Blocking";
             break;
+        case Map:
+            return "Map";
+            break;
+        case Orb:
+            return "Orb";
+            break;
         }
     }
 
@@ -43,14 +48,17 @@ public:
         void adjustSpecialAbilityStats(SpecialAbilities sa)
         {
             switch (sa){
-            case Fireball: descripition = "Produces a fireball from wand, dealing a large amount of damage";
+            case Fireball: description = "Produces a fireball from wand, dealing a large amount of damage";
             break;
-            case KillerMove: descripition = "A killing move";
+            case KillerMove: description = "A killing move";
             break;
-            case Stealth: descripition = "Sneak past any enemy";
+            case Stealth: description = "Sneak past any enemy";
             break;
-            case Blocking: descripition = "Block any hit from an enemy";
+            case Blocking: description = "Block any hit from an enemy";
             break;
+            case Map: description = "Lets you know where you are going";
+            break;
+            case Orb: description = "Has mysterious properties";
             }
         }
 };

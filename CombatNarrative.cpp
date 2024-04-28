@@ -20,12 +20,14 @@ class CombatNarrative{
             cout << endl;
             cout << "Dragon's health is " + to_string(dragonHealth) << endl;
             cout << "Your health is " + to_string(character->getHealth()) << endl;
+            cout << endl;
 
             cout << "Choose your next action:" << endl;
             cout << "1. Attack the dragon with your weapon\n2. Heal yourself\n3. Hide" << endl;
             cin >> choice;
+            cout << endl;
             if(choice==1){
-                int damageToDragon = (int)(25*(character->getStrength()/100.0));
+                int damageToDragon = (int)((25*(character->getStrength()/100.0))+(5*(character->getWeaponStrength()/100.0)));
                 cout << "Your blow lands! The dragon loses " + to_string(damageToDragon) + " health." << endl;
                 dragonHealth-=damageToDragon;
             }
@@ -71,8 +73,9 @@ class CombatNarrative{
             cout << "Choose your next action:" << endl;
             cout << "1. Attack the lake monster with your weapon\n2. Heal yourself\n3. Hide" << endl;
             cin >> choice;
+            cout << endl;
             if(choice==1){
-                int damageToLakeMonster = (int)(25*(character->getStrength()/100.0));
+                int damageToLakeMonster = (int)(25*(character->getStrength()/100.0))+(5*(character->getWeaponStrength()/100.0));
                 cout << "Your blow lands! The lake monster loses " + to_string(damageToLakeMonster) + " health." << endl;
                 lakeMonsterHealth-=damageToLakeMonster;
             }
@@ -117,8 +120,9 @@ class CombatNarrative{
             cout << "Choose your next action:" << endl;
             cout << "1. Attack the king with your weapon\n2. Heal yourself\n3. Hide" << endl;
             cin >> choice;
+            cout << endl;
             if(choice==1){
-                int damageToKing = (int)(25*(character->getStrength()/100.0));
+                int damageToKing = (int)(25*(character->getStrength()/100.0))+(5*(character->getWeaponStrength()/100.0));
                 cout << "Your blow lands! The king loses " + to_string(damageToKing) + " health." << endl;
                 kingHealth-=damageToKing;
             }

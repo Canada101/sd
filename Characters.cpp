@@ -34,8 +34,8 @@ public:
         return speed;
     }
 
-    const vector<Weapon> & getWeapons() const {
-        return inventory.getWeapons();
+    Weapon getWeapon(){
+        return inventory.getWeapon();
     }
 
     const vector<SpecialAbility> & getSpecials() const {
@@ -52,18 +52,12 @@ public:
     }
 
     void addWeapons(Weapon weapon){
-        inventory.add(weapon);
+        inventory.addWeapon(weapon);
     }
 
 
     Inventory getInventory(){
         return inventory;
-    }
-
-    void setWeapon(Weapon weapon){
-    //     this->weapon.equipped = false;
-    //     this->weapon = weapon;
-    //     this->weapon.equipped = true;
     }
 
     void printStats(){
@@ -73,21 +67,9 @@ public:
         displayInventory();
     }
 
-   void discardWeapon(Weapon weapon){
-        inventory.discardWeapon(weapon);
-   }
-
-   bool WeaponsEmpty(){
-    return inventory.isEmpty();
-   }
-
-   bool WeaponsFull(){
-    return inventory.isFull();
-   }
-
-   void swapWeapons(Weapon w1, Weapon w2){
-    inventory.swapWeapons(w1,w2);
-   }
+    int getWeaponStrength(){
+        return inventory.getWeaponStrength();
+    }
 
     void loseHealth(int damage){
         health-=damage;
@@ -117,10 +99,8 @@ public:
         armor = 75;
         strength = 100;
         speed = 25;
-        inventory.add(Spear);
-        inventory.add(Shield);
+        inventory.addWeapon(Spear);
         inventory.addSpecial(Blocking);
-        // addSpecialAbility("blocking");
     }
 };
 
@@ -131,10 +111,8 @@ public:
         armor = 50;
         strength = 25;
         speed = 100;
-        inventory.add(BowandArrow);
-        inventory.add(Knife);
+        inventory.addWeapon(BowandArrow);
         inventory.addSpecial(Stealth);
-        //addSpecialAbility("language proficiency");
     }
 };
 
@@ -145,8 +123,7 @@ public:
         armor = 100;
         speed = 50;
         strength = 50;
-        inventory.add(HeavenSlasher);
-        inventory.add(Manual);
+        inventory.addWeapon(HeavenSlasher);
         inventory.addSpecial(KillerMove);
     }
 };
@@ -158,8 +135,7 @@ public:
         armor = 25;
         strength = 50;
         speed = 75;
-        inventory.add(Wand);
-        inventory.add(Cloak);
+        inventory.addWeapon(Wand);
         inventory.addSpecial(Fireball);
     }
 };
