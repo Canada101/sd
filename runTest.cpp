@@ -13,6 +13,5 @@ int main(){
 		std::cout << "testHealth passed" << std::endl;
 	}
 
-	return 0;
-
+	return -1;
 }
