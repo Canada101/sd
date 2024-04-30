@@ -13,9 +13,7 @@ combat narrative fight lake monster
 #include <string>
 #include "Characters.cpp"
 #include "Inventory/Inventory.cpp"
-#include "CombatNarrative.cpp"
 #include "Narrative.cpp"
-#include "NPCNarrative.cpp"
 class UnitTests {
 private:
     std::ofstream inputFile;
