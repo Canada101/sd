@@ -18,6 +18,6 @@ jobs:
     - name: Compile main.cpp
       run: g++ main.cpp -I/opt/homebrew/Cellar/sfml/2.6.1/include -o main -L/opt/homebrew/Cellar/sfml/2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system
     - name: Compile unit tests
-      run: g++ runTest.cpp -o runTest
+      run: g++ runTest.cpp -I/opt/homebrew/Cellar/sfml/2.6.1/include -o runTest -L/opt/homebrew/Cellar/sfml/2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system
     - name: Run unit tests
       run: ./runTest
