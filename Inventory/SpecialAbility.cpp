@@ -6,23 +6,20 @@ using namespace std;
 
 enum SpecialAbilities{Fireball, KillerMove, Stealth, Blocking, Map, Orb};
 
-class SpecialAbility
-{
+class SpecialAbility{
 public:
-    SpecialAbilities s;
+    SpecialAbilities specialAbility;
     string description;
     bool used; 
 
-    SpecialAbility(SpecialAbilities sa) {
-        this->s = sa;
+    SpecialAbility(SpecialAbilities sa){
+        this->specialAbility = sa;
         adjustSpecialAbilityStats(sa);
         used = false;
     };
 
-    string GetName()
-    {
-        switch (s)
-        {
+    string getName(){
+        switch (specialAbility){
         case Fireball:
             return "Fireball";
             break;
@@ -45,8 +42,7 @@ public:
     }
 
     private:
-        void adjustSpecialAbilityStats(SpecialAbilities sa)
-        {
+        void adjustSpecialAbilityStats(SpecialAbilities sa){
             switch (sa){
             case Fireball: description = "Produces a fireball from wand, dealing a large amount of damage";
             break;

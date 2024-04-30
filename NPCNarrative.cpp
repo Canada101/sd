@@ -8,12 +8,12 @@ class NarrativeNPC{
     Text instruction[10];
     Button choice[3];
     Font font;
-    Time t;
+    Time time;
 
     NarrativeNPC(){
-        t = seconds(4);
+        time = seconds(4);
 
-        if (!font.loadFromFile("arial.ttf")) {
+        if (!font.loadFromFile("arial.ttf")){
         }
 
         for(int i = 0; i < 10; i++ ){
@@ -81,7 +81,7 @@ class NarrativeNPC{
                                                         instruction[3].setString("Stranger: 'The dragon is violent. Merciless.\nIt has no regard for mere human beings.\nI'm not sure what kind of adventure you are seeking,\nbut be careful of this creature.\nRemain aggressive, and you just may take it down once and for all...");
                                                         window.draw(instruction[3]);
                                                         window.display();
-                                                        sleep(t);
+                                                        sleep(time);
                                                         return;
                                                     }else if(conv[1].isClicked(mousePos)){
                                                         return;
@@ -128,7 +128,7 @@ class NarrativeNPC{
                                                         window.draw(instruction[5]);
                                                         window.draw(instruction[6]);
                                                         window.display();
-                                                        sleep(t);
+                                                        sleep(time);
                                                         return;
                                                     }else if(conv[1].isClicked(mousePos)){
                                                         return;
@@ -175,7 +175,7 @@ class NarrativeNPC{
                                                         window.draw(instruction[8]);
                                                         window.draw(instruction[9]);
                                                         window.display();
-                                                        sleep(t);
+                                                        sleep(time);
                                                         return;
                                                     }else if(conv[1].isClicked(mousePos)){
                                                         return;
@@ -260,7 +260,7 @@ class NarrativeNPC{
                                                         instruction[3].setString("Fisherman: 'I need to feed myself and my family somehow.\nThe King has clearly shown he is nothing but\nuseless when it comes to our safety and basic needs.'\n\nYou feel sorry for the fisherman.");
                                                         window.draw(instruction[3]);
                                                         window.display();
-                                                        sleep(t);
+                                                        sleep(time);
                                                         return;
                                                     }else if(conv[1].isClicked(mousePos)){
                                                         return;
@@ -307,7 +307,7 @@ class NarrativeNPC{
                                                         window.draw(instruction[5]);
                                                         window.draw(instruction[6]);
                                                         window.display();
-                                                        sleep(t);
+                                                        sleep(time);
                                                         return;
                                                     }else if(conv[1].isClicked(mousePos)){
                                                         return;
@@ -389,7 +389,7 @@ class NarrativeNPC{
                                                         instruction[3].setString("You leave before the former knight could say anything else");
                                                         window.draw(instruction[3]);
                                                         window.display();
-                                                        sleep(t);
+                                                        sleep(time);
                                                         return;
                                                     }else if(conv[1].isClicked(mousePos)){
                                                         window.clear();
@@ -397,7 +397,7 @@ class NarrativeNPC{
                                                         instruction[3].setString("Knight: 'The King can be aggressive...\nYou must match that energy.\nWhatever you do, do not try and run away.\nThe King is too quick, he will get you.\n\nYou leave more confident.");
                                                         window.draw(instruction[3]);
                                                         window.display();
-                                                        sleep(t);
+                                                        sleep(time);
                                                         return;
                                                     }
                                                 }
@@ -442,7 +442,7 @@ class NarrativeNPC{
                                                         window.draw(instruction[5]);
                                                         window.draw(instruction[6]);
                                                         window.display();
-                                                        sleep(t);
+                                                        sleep(time);
                                                         return;
                                                     }else if(conv[1].isClicked(mousePos)){
                                                         return;

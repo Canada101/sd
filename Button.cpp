@@ -4,6 +4,12 @@ using namespace sf;
 using namespace std;
 
 class Button{
+private:
+    RectangleShape button;
+    Text text;
+    Color idleColor = Color::White;
+    Color hoverColor;
+    
 public:
 
     Button(){};
@@ -27,19 +33,13 @@ public:
 
     }
 
-    void drawButton(RenderWindow &window) {
+    void drawButton(RenderWindow &window){
         window.draw(button);
         window.draw(text);
     }
 
-    bool isClicked(Vector2f mousePos) {
+    bool isClicked(Vector2f mousePos){
         FloatRect buttonBounds = button.getGlobalBounds();
         return buttonBounds.contains(mousePos);
     }
-
-private:
-    RectangleShape button;
-    Text text;
-    Color idleColor = Color::White;
-    Color hoverColor;
 };

@@ -6,26 +6,23 @@ using namespace std;
 
 enum WeaponType{BowandArrow, HeavenSlasher, Spear, Wand};
 
-class Weapon
-{
+class Weapon{
 public:
-    WeaponType w;
+    WeaponType weaponType;
     int strength;
     string rarity;
     bool equipped; 
 
     Weapon(){}
 
-    Weapon(WeaponType wt) {
-        this->w = wt;
+    Weapon(WeaponType wt){
+        this->weaponType = wt;
         adjustStats(wt);
         equipped = false;
     };
 
-    string GetName()
-    {
-        switch (w)
-        {
+    string getName(){
+        switch (weaponType){
         case BowandArrow:
             return "Bow and Arrow";
             break;
@@ -46,8 +43,7 @@ public:
     }
 
     private:
-        void adjustStats(WeaponType wt)
-        {
+        void adjustStats(WeaponType wt){
             switch (wt){
             case BowandArrow: strength = 35, rarity = "Common";
             break;

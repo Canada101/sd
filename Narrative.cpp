@@ -18,10 +18,11 @@ private:
     Button characterChoice[MAX_CHARACTER];
     Text header;
     Text mess;
-    Time t;
+    Time time;
+
 public:
     Narrative(){
-        t = seconds(5);
+        time = seconds(5);
         placeInStory = 0;  
 
         haveMap = false;
@@ -44,8 +45,7 @@ public:
         characterChoice[3] = Button(Vector2f(50, 500), 200, 50, font, "Wizard");
 
         mess.setFont(font);
-        mess.setFillColor(sf::Color::White);
-        // moveThroughStory();   
+        mess.setFillColor(sf::Color::White);   
     }
 
     void drawCharacterMenu(RenderWindow &window){
@@ -71,28 +71,24 @@ public:
                                 character = new Guardian();
                                 window.clear();
                                 moveThroughStory(window);
-                                // window.display();
                             }
 						}else if(characterChoice[1].isClicked(mousePos)){
 							while(window.isOpen()){
                                 character = new Ranger();    
                                 window.clear();
                                 moveThroughStory(window);
-                                // window.display();
                             }
 						}else if(characterChoice[2].isClicked(mousePos)){
 							while(window.isOpen()){    
                                 character = new Swordsman();
 							    window.clear();
                                 moveThroughStory(window);
-                                // window.display();
                             }
 						}else if(characterChoice[3].isClicked(mousePos)){
 							while(window.isOpen()){        
                                 character = new Wizard();
                                 window.clear();
                                 moveThroughStory(window);
-                                // window.display();
                             }
 						}
                     }				
@@ -158,7 +154,6 @@ public:
                     case sf::Event::MouseButtonPressed:
                         window.clear();
                         placeInStory++;
-                        // window.display();
                 }
             }
 
@@ -198,7 +193,7 @@ public:
                                 ps2.setString("While moving through the forest, you found the dragon\nand the dragon is about to attack you.\n");
                                 window.draw(ps2);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                                 bool killDragon = combatNarrative.fightDragon(window);
                                 placeInStory++;
 					        }else if(choice[1].isClicked(mousePos)){
@@ -218,7 +213,7 @@ public:
                                 window.draw(ps);
                                 window.draw(ps2);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                                 bool killDragon = combatNarrative.fightDragon(window);
                                 placeInStory++;
 					        }
@@ -246,13 +241,13 @@ public:
             window.display();
 
             Event event2;
-            while (window.pollEvent(event2)) {
+            while (window.pollEvent(event2)){
                 switch (event2.type) {
                     case Event::Closed:
                         window.close();
                         break;
                     case Event::MouseButtonPressed:
-                        if(event2.mouseButton.button == Mouse::Left) {
+                        if(event2.mouseButton.button == Mouse::Left){
                             Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
                             if(choice[0].isClicked(mousePos)){
                                 window.clear();
@@ -265,8 +260,8 @@ public:
                                 character->addSpecialAbility(Map);
                                 window.draw(ps);
                                 window.display();
-                                sleep(t);
-                                sleep(t);
+                                sleep(time);
+                                sleep(time);
 
                                 window.clear();
                                 Text context2;
@@ -286,8 +281,8 @@ public:
                                 bool flag = true;
                                 while(flag){
                                     Event event2_e;
-                                    while (window.pollEvent(event2_e)) {
-                                        switch (event2_e.type) {
+                                    while (window.pollEvent(event2_e)){
+                                        switch (event2_e.type){
                                             case Event::Closed:
                                                 window.close();
                                                 break;
@@ -303,7 +298,7 @@ public:
                                                         ps.setString(character->printStats());
                                                         window.draw(ps);
                                                         window.display();
-                                                        sleep(t);
+                                                        sleep(time);
                                                         placeInStory++;
                                                         flag = false;
                                                     }else if(option[1].isClicked(mousePos)){
@@ -327,7 +322,7 @@ public:
                                 ps.setString("You ignored the paper and are heading in a random direction.");
                                 window.draw(ps);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                                 placeInStory++;
 					        }
                         }		
@@ -366,7 +361,7 @@ public:
             
 
             Event event3;
-            while (window.pollEvent(event3)) {
+            while (window.pollEvent(event3)){
                 switch (event3.type) {
                     case Event::Closed:
                         window.close();
@@ -383,7 +378,7 @@ public:
                                 ps.setString("The water suddenly draws back to reveal the lake monster and\n the monster is trying to attack.");
                                 window.draw(ps);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                                 bool killLakeMonster = combatNarrative.fightLakeMonster(window);
                                 placeInStory++;
 					        }else if(choice[1].isClicked(mousePos)){
@@ -403,8 +398,8 @@ public:
                                 window.draw(ps);
                                 window.draw(ps2);
                                 window.display();
-                                sleep(t);
-                                sleep(t);
+                                sleep(time);
+                                sleep(time);
                                 bool killLakeMonster = combatNarrative.fightLakeMonster(window);
                                 placeInStory++;
 					        }
@@ -433,7 +428,7 @@ public:
             window.display();
 
             Event event4;
-            while (window.pollEvent(event4)) {
+            while (window.pollEvent(event4)){
                 switch (event4.type) {
                     case Event::Closed:
                         window.close();
@@ -450,8 +445,8 @@ public:
                                 ps.setString("You find a closed cave with an imprint of a map on its entrance.");    
                                 window.draw(ps);
                                 window.display();
-                                sleep(t);
-                                sleep(t);
+                                sleep(time);
+                                sleep(time);
                                 if(haveMap){
                                     window.clear();
                                     Text m;
@@ -477,7 +472,7 @@ public:
                                     bool flag = true;
                                     while(flag){
                                         Event event4_e;
-                                        while (window.pollEvent(event4_e)) {
+                                        while (window.pollEvent(event4_e)){
                                             switch (event4_e.type) {
                                                 case Event::Closed:
                                                     window.close();
@@ -495,7 +490,7 @@ public:
                                                             m2.setString("You now head to the city gate on your mission to confront the king.");
                                                             window.draw(m2);
                                                             window.display();
-                                                            sleep(t);
+                                                            sleep(time);
                                                             placeInStory++;
                                                             flag = false;
                                                         }else if(option[1].isClicked(mousePos)){
@@ -509,7 +504,7 @@ public:
                                                             m3.setString(character->printStats());
                                                             window.draw(m3);
                                                             window.display();
-                                                            sleep(t);
+                                                            sleep(time);
                                                             window.clear();
                                                             Text m4;
                                                             m4.setFont(font);
@@ -518,7 +513,7 @@ public:
                                                             m4.setString("You now head to the city gate on your mission to confront the king.");
                                                             window.draw(m4);
                                                             window.display();
-                                                            sleep(t);
+                                                            sleep(time);
                                                             placeInStory++;
                                                             flag = false;
                                                         }
@@ -545,7 +540,7 @@ public:
                                     window.draw(m5);
                                     window.draw(m6);
                                     window.display();
-                                    sleep(t);
+                                    sleep(time);
                                     placeInStory++;
 
                                 }
@@ -558,7 +553,7 @@ public:
                                 ps.setString("You now head to the city gate on your mission to confront the king.");
                                 window.draw(ps);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                                 placeInStory++;
 					        }
                         }		
@@ -596,13 +591,13 @@ public:
             window.display();
 
             Event event5;
-            while (window.pollEvent(event5)) {
+            while (window.pollEvent(event5)){
                 switch (event5.type) {
                     case Event::Closed:
                         window.close();
                         break;
                     case Event::MouseButtonPressed:
-                        if(event5.mouseButton.button == Mouse::Left) {
+                        if(event5.mouseButton.button == Mouse::Left){
                             Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
                             if(choice[0].isClicked(mousePos)){
                                 window.clear();
@@ -613,12 +608,12 @@ public:
                                 ps.setString("You check in to a nearby inn.\nIn the room, you work on your plan to infiltrate the castle.");
                                 window.draw(ps);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                                 placeInStory++;
 					        }else if(choice[1].isClicked(mousePos)){
 						        window.clear();
                                 npcNarrative.talkToCastleCharacter(window);
-                                sleep(t);
+                                sleep(time);
                             
                                 window.clear();
                                 Text ps;
@@ -628,7 +623,7 @@ public:
                                 ps.setString("You check in to a nearby inn.\nIn the room, you work on your plan to infiltrate the castle.");
                                 window.draw(ps);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                                 placeInStory++;
 					        }
                         }				
@@ -676,13 +671,13 @@ public:
             bool flag = true;
             Event event6;
             while(flag & haveOrb){
-                while (window.pollEvent(event6)) {
+                while (window.pollEvent(event6)){
                     switch (event6.type) {
                         case Event::Closed:
                             window.close();
                             break;
                         case Event::MouseButtonPressed:
-                            if(event6.mouseButton.button == Mouse::Left) {
+                            if(event6.mouseButton.button == Mouse::Left){
                                 Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
                                 if(option[0].isClicked(mousePos)){
                                     window.clear();
@@ -694,7 +689,7 @@ public:
                                     ps.setString(character->printStats());
                                     window.draw(ps);
                                     window.display();
-                                    sleep(t);
+                                    sleep(time);
                                     flag = false;
                                 }else if(option[1].isClicked(mousePos)){
                                     window.clear();
@@ -725,7 +720,7 @@ public:
             window.draw(context5);
             
             window.display();
-            sleep(t);
+            sleep(time);
             bool killKing = combatNarrative.fightKing(window);
             placeInStory++;
         }else if(placeInStory == 7){
@@ -750,8 +745,8 @@ public:
             window.draw(context2);
             window.draw(context3);
             window.display();
-            sleep(t);
-            sleep(t);
+            sleep(time);
+            sleep(time);
             window.close();
         }   
     }

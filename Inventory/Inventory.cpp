@@ -11,7 +11,7 @@ using namespace std;
 class Inventory{
 private:
     Weapon weapon;
-    vector<SpecialAbility> Specials; 
+    vector<SpecialAbility> specials; 
     int inventoryCount = 0;
 
 public:
@@ -34,10 +34,9 @@ public:
         }
     }
 
-    string displayWeapons()
-    {
+    string displayWeapons(){
         string message;
-        message = "\n=============List of Weapons=============\n" + weapon.GetName();
+        message = "\n=============List of Weapons=============\n" + weapon.getName();
         return message;
     }
 
@@ -48,9 +47,9 @@ public:
     string displaySpecials(){
         string message;
         message = "\n=============List of Special Abilities=============\n";
-        for (int i = 0; i < Specials.size(); i++)
+        for (int i = 0; i < specials.size(); i++)
         {
-            message += Specials[i].GetName() + (Specials[i].used ? " avaliable": "|");
+            message += specials[i].getName() + (specials[i].used ? " avaliable": "|");
         }
         return message;
     }
@@ -60,7 +59,7 @@ public:
             cout<< "Inventory is now full!" << endl;
             return;
         }
-        Specials.push_back(s);
+        specials.push_back(s);
         inventoryCount++;
     }
 
@@ -69,7 +68,7 @@ public:
     }
 
     const vector<SpecialAbility>& getSpecials() const {
-        return Specials;
+        return specials;
     }
 
 };

@@ -12,10 +12,10 @@ class CombatNarrative{
     Text instruction[10];
     Button choice[3];
     Font font;
-    Time t;
+    Time time;
 
     CombatNarrative(CharacterSuper* characterType){
-        t = seconds(2);
+        time = seconds(2);
 
         if (!font.loadFromFile("arial.ttf")) {
         }
@@ -54,8 +54,8 @@ class CombatNarrative{
            
 
             Event event;
-            while (window.pollEvent(event)) {
-                switch (event.type) {
+            while (window.pollEvent(event)){
+                switch (event.type){
                     case Event::Closed:
                         window.close();
                         break;
@@ -82,7 +82,7 @@ class CombatNarrative{
                                 instruction[4].setString("You patch up your wounds. You gain 25 health");
                                 window.draw(instruction[4]);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
 					        }else if(choice[2].isClicked(mousePos)){
                                 window.clear();
                                 int damageToCharacter = (int)(25*(1-(character->getArmor()/100.0)))+5;
@@ -91,7 +91,7 @@ class CombatNarrative{
                                 instruction[5].setString("You attempt to run away.\nThe dragon attacks and you lose " + to_string(damageToCharacter) + " health.");
                                 window.draw(instruction[5]);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                             }
                         }				
                         break;
@@ -108,7 +108,7 @@ class CombatNarrative{
                 instruction[6].setString("The Dragon Killed You.\n\nGAME END\n");
                 window.draw(instruction[6]);
                 window.display();
-                sleep(t);
+                sleep(time);
                 window.close();
                
             }else if(dragonHealth<=0){
@@ -119,7 +119,7 @@ class CombatNarrative{
                 character->gainArmor(10);
                 window.draw(instruction[7]);
                 window.display();
-                sleep(t);
+                sleep(time);
                 return won;
             }
         }
@@ -151,7 +151,7 @@ class CombatNarrative{
             window.display();
 
             Event event;
-            while (window.pollEvent(event)) {
+            while (window.pollEvent(event)){
                 switch (event.type) {
                     case Event::Closed:
                         window.close();
@@ -167,7 +167,7 @@ class CombatNarrative{
                                 instruction[3].setString("Your blow lands! The lake monster loses " + to_string(damageToLakeMonster) + " health.");
                                 window.draw(instruction[3]);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
 					        }else if(choice[1].isClicked(mousePos)){
 						        window.clear();
                                 if((character->getHealth()+25)<100){
@@ -179,7 +179,7 @@ class CombatNarrative{
                                 instruction[4].setString("You patch up your wounds. You gain 25 health");
                                 window.draw(instruction[4]);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
 					        }else if(choice[2].isClicked(mousePos)){
                                 window.clear();
                                 character->loseHealth(25);
@@ -187,7 +187,7 @@ class CombatNarrative{
                                 instruction[5].setString("You attempt to run away.\nThe dragon attacks and you lose 25 health.");
                                 window.draw(instruction[5]);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                             }
                         }				
                         break;
@@ -203,7 +203,7 @@ class CombatNarrative{
                 instruction[6].setString("The Lake Monster Killed You.\n\nGAME END\n");
                 window.draw(instruction[6]);
                 window.display();
-                sleep(t);
+                sleep(time);
                 window.close();
                
             }else if(lakeMonsterHealth<=0){
@@ -214,7 +214,7 @@ class CombatNarrative{
                 character->gainArmor(10);
                 window.draw(instruction[7]);
                 window.display();
-                sleep(t);
+                sleep(time);
                 return won;
             }
 
@@ -247,8 +247,8 @@ class CombatNarrative{
             window.display();
 
             Event event;
-            while (window.pollEvent(event)) {
-                switch (event.type) {
+            while (window.pollEvent(event)){
+                switch (event.type){
                     case Event::Closed:
                         window.close();
                         break;
@@ -263,7 +263,7 @@ class CombatNarrative{
                                 instruction[3].setString("Your blow lands! The king loses " + to_string(damageToKing) + " health.");
                                 window.draw(instruction[3]);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
 					        }else if(choice[1].isClicked(mousePos)){
 						        window.clear();
                                 if((character->getHealth()+25)<100){
@@ -275,7 +275,7 @@ class CombatNarrative{
                                 instruction[4].setString("You patch up your wounds. You gain 25 health");
                                 window.draw(instruction[4]);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
 					        }else if(choice[2].isClicked(mousePos)){
                                 window.clear();
                                 character->loseHealth(25);
@@ -283,7 +283,7 @@ class CombatNarrative{
                                 instruction[5].setString("You attempt to run away.\nThe king attacks and you lose 25 health.");
                                 window.draw(instruction[5]);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
                             }
                         }				
                         break;
@@ -299,7 +299,7 @@ class CombatNarrative{
                 instruction[6].setString("The King Killed You.\nBetter Luck Next Time.\n\nGAME END\n");
                 window.draw(instruction[6]);
                 window.display();
-                sleep(t);
+                sleep(time);
                 window.close();
                
             }else if(kingHealth<=0){
@@ -310,7 +310,7 @@ class CombatNarrative{
                 character->gainArmor(10);
                 window.draw(instruction[7]);
                 window.display();
-                sleep(t);
+                sleep(time);
                 return won;
             }
 

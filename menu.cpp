@@ -5,17 +5,16 @@ using namespace sf;
 
 #define MAX_NUMBER_OF_ITEMS 2
 
-class Menu {
+class Menu{
 private:
 	int selectedItemIndex;
 	Font font;
     Button menu[MAX_NUMBER_OF_ITEMS];
 	Text header;
+
 public:
-    Menu()
-    {
-		if(!font.loadFromFile("arial.ttf"))
-		{
+    Menu(){
+		if(!font.loadFromFile("arial.ttf")){
 
 		}
 
@@ -32,23 +31,21 @@ public:
 	    selectedItemIndex = 0;
     }
 
-    void draw(RenderWindow &window)
-    {
+    void draw(RenderWindow &window){
 		window.draw(header);
-	    for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)
-	    {
+	    for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++){
 		    menu[i].drawButton(window);
 	    }
     }
-    void handleEvents(RenderWindow &window) {
+    void handleEvents(RenderWindow &window){
         Event event;
-        while (window.pollEvent(event)) {
+        while (window.pollEvent(event)){
             switch (event.type) {
                 case Event::Closed:
                     window.close();
                     break;
                 case Event::MouseButtonPressed:
-                    if (event.mouseButton.button == Mouse::Left) {
+                    if (event.mouseButton.button == Mouse::Left){
                         Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
                         if(menu[1].isClicked(mousePos)){
 							window.close();
