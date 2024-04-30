@@ -12,7 +12,7 @@ combat narrative fight lake monster
 #include <fstream>
 #include <string>
 #include "Characters.cpp"
-
+#include "Inventory\Inventory.cpp"
 class UnitTests {
 private:
     std::ofstream inputFile;
@@ -29,15 +29,34 @@ public:
         int health = guardian.getHealth();
 
         // Check if the return value is an integer
-        bool isPass = (typeid(health) == typeid(int));
+        bool isPassHealth = (typeid(health) == typeid(int));
 
-        if (isPass) {
+        if (isPassHealth) {
             inputFile << "pass" << std::endl;
         } else {
             inputFile << "fail" << std::endl;
         }
 
-        return isPass;
+        return isPassHealth;
+    }
+
+    bool testInventory () {
+        Inventory inv;
+        bool full = inv.isFull();
+
+        bool isPassInventory = (full == false);
+
+        if (isPassInventory){
+            inputFile << "pass" << std::endl;
+        } else {
+            inputFile << "fail" << std::endl;
+        }
+        return isPassInventory;
+
+    }
+
+    bool testCombat () {
+
     }
 
     ~UnitTests() {
