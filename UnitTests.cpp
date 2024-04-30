@@ -30,7 +30,7 @@ public:
         int health = guardian.getHealth();
 
         // Check if the return value is an integer
-        bool isPassHealth = (typeid(health) == typeid(int));
+        bool isPassHealth = (health == 100);
 
         if (isPassHealth) {
             inputFile << "pass" << std::endl;
@@ -45,7 +45,7 @@ public:
         int armor = guardianTwo.getArmor();
 
         // Check if the return value is an integer
-        bool isPassArmor = (typeid(armor) == typeid(int));
+        bool isPassArmor = (armor == 75);
 
         if (isPassArmor) {
             inputFile << "pass" << std::endl;
@@ -60,7 +60,7 @@ public:
         int speed = guardianThree.getSpeed();
 
         // Check if the return value is an integer
-        bool isPassSpeed = (typeid(speed) == typeid(int));
+        bool isPassSpeed = (speed == 25);
 
         if (isPassSpeed) {
             inputFile << "pass" << std::endl;
