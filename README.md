@@ -31,35 +31,75 @@ This game uses the standard C++ library, along with:
 
 ```mermaid
   classDiagram
-    class NarrativeSuper {
-
+    class Narrative {
+        -placeInStory: Integer
+        -character: CharacterSuper
+        -characterChoice[MAX_CHARACTER]: Button
+        Manages place in story, handling
+        all user interactions such as character 
+        selections and choices in the storyline.
     }
 
-    class StoryNarrative{
-
+    class CombatNarrative{
+        -character: CharacterSuper
+        +fightDragon()
+        +fightLakeMonster()
+        +fightKing()
     }
 
-    class Main { 
-     
+    class NPCNarrative{
+        +talkToWoodsCharacter()
+        +talkToLakeCharacter()
+        +talkToCastleCharacter()
     }
 
+    class Main{
+        -backgroundImage: Texture
+        -menu: Menu
+        Runs the display window,
+        continues to loop through
+        different screens including
+        any background images,
+        terminates when game is over. 
+    }
     class CharacterSuper{
-      -Health: Integer
-      -Armor: Integer
-      -Strength: Integer
-      -Speed: Integer
-      -Inventory: vector<String>
-      -SpecialAbilities: vector<String>
+      -health: Integer
+      -armor: Integer
+      -strength: Integer
+      -speed: Integer
+      -inventory: Inventory
       +GetHealth()
+      +MaxHealth()
       +GetArmor()
-      +GetStregth()
+      +GetStrength()
       +GetSpeed()
-      +getSpecialAbilities()
-      +addSpecialAbilities()
-      +getInventory()
-      +addToInventory()
+      +getWeapons()
+      +getSpecials()
+      +addSpecialAbility()
+      +displayInventory()
+      +discardWeapon()
+      +WeaponsEmpty()
+      +WeaponsFull()
+      +swapWeapons()
       +loseHealth()
       +gainHealth()
+      +loseArmor()
+      +gainArmor()
+    }
+
+    class Inventory{
+        -Weapons: Vector
+        -Specials: Vector
+        -inventoryCount: Integer
+        +add()
+        +swapWeapons()
+        +isFull()
+        +displayWeapon()
+        +discardWeapon()
+        +displaySpecials()
+        +addSpecial()
+        +getWeapons()
+        +getSpecials()
     }
 
     class Guardian{
@@ -79,13 +119,16 @@ This game uses the standard C++ library, along with:
     }
 
 
-    Main --> NarrativeSuper : Has
-    NarrativeSuper --> StoryNarrative : Has
-    StoryNarrative --> CharacterSuper : Has
+    Main --> Narrative : Uses
+    Narrative --> CombatNarrative : Uses
+    Narrative --> NPCNarrative : Uses
+    CombatNarrative --> CharacterSuper : Uses
+    CharacterSuper --> Inventory : Uses
     CharacterSuper <|-- Guardian 
     CharacterSuper <|-- Ranger
     CharacterSuper <|-- Swordsman
     CharacterSuper <|-- Wizard
+
 ```
 
 ## Process View
