@@ -34,23 +34,25 @@ public:
         }
     }
 
-    void displayWeapons()
+    string displayWeapons()
     {
-        cout << "=============List of Weapons=============" << endl;
-        cout << weapon.GetName() << endl;
+        string message;
+        message = "\n=============List of Weapons=============\n" + weapon.GetName();
+        return message;
     }
 
     bool isEmpty(){
         return inventoryCount == 0;
     }
 
-   void displaySpecials(){
-        cout << "=============List of Special Abilities=============" << endl;
+    string displaySpecials(){
+        string message;
+        message = "\n=============List of Special Abilities=============\n";
         for (int i = 0; i < Specials.size(); i++)
         {
-            cout << Specials[i].GetName() << (Specials[i].used ? " avaliable": " ") << endl;
+            message += Specials[i].GetName() + (Specials[i].used ? " avaliable": "|");
         }
-        cout << endl;
+        return message;
     }
 
     void addSpecial(SpecialAbility s){

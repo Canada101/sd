@@ -46,9 +46,10 @@ public:
         inventory.addSpecial(special);
     }
 
-    void displayInventory(){
-        inventory.displayWeapons();
-        inventory.displaySpecials();
+    string displayInventory(){
+        string message;
+        message = inventory.displayWeapons() + inventory.displaySpecials();
+        return message;
     }
 
     void addWeapons(Weapon weapon){
@@ -60,11 +61,11 @@ public:
         return inventory;
     }
 
-    void printStats(){
-        cout << "Armor: " + to_string(armor) << endl;
-        cout << "Strength: " + to_string(strength) << endl;
-        cout << "Speed: " + to_string(speed) << endl;
-        displayInventory();
+    string printStats(){
+        string message;
+        message = "Health: " + to_string(health) + "\nArmor: " + to_string(armor) + "\nStrength: " + to_string(strength) + "\nSpeed: " + to_string(speed);
+        
+        return message + displayInventory();
     }
 
     int getWeaponStrength(){
