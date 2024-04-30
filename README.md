@@ -6,6 +6,9 @@ This project is a version of a Choose Your Own Adventure game. In this game, the
 The player of the game is given four options of character types to play as: the wizard, the ranger, the swordsman, or the guardian. The game provides the player with multiple options to choose from throughout the game, which change the course of the game. 
 
 ## Compiling and Running the Program
+
+In order to run the program, ensure [SFML](https://www.sfml-dev.org/download.php) is downloaded.
+
 ### How to Compile:
 In order to compile the game, ensure you have `g++` and `SFML` installed on your system.
 
@@ -26,14 +29,16 @@ This game requires a system that is capable of running C++ and SFML.
 
 ## Library Requirements
 * Standard C++ library
-* The Simple and Fast Multimedia Library (SFML)
+* [The Simple and Fast Multimedia Library (SFML)](https://www.sfml-dev.org/index.php)
 
 ## Logical View
 
 ```mermaid
   classDiagram
     class Narrative {
-        Contains the main story and switches between the CombatNarrative and NPCNarrative as needed. This also uses separate Menu and Button classes to generate graphics.
+        Contains the main story and switches between the CombatNarrative
+         and NPCNarrative as needed. This also uses separate Menu and
+          Button classes to generate graphics.
         -placeInStory: Integer
         -character: CharacterSuper
         -characterChoice[MAX_CHARACTER]: Button
@@ -76,7 +81,9 @@ This game requires a system that is capable of running C++ and SFML.
     }
 
     class Inventory{
-       Inventory for characters in the game. Includes one weapon of the Weapon child class for each character and special abilities or items from the specialAbilities child class.
+       Inventory for characters in the game. Includes one weapon of the
+        Weapon child class for each character and special abilities or
+         items from the specialAbilities child class.
         -weapon: Weapon
         -Specials: Vector
         -inventoryCount: Integer
