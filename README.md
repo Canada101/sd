@@ -1,31 +1,32 @@
 # Project Group 5: Choose Your Adventure Game
 
 ## Project Overview
-The goal of this project is to develop a version of a Choose Your Own Adventure game. The storyline takes you through various scenarios, such as: interacting with strangers, fighting monsters, and ending with the ultimate goal of confronting the king of the village.
+This project is a version of a Choose Your Own Adventure game. In this game, the king of the land has begun using his power for evil. He allows monsters to roam, pillaging and burning as they please. The main character of this story is embarking on a journey to confront the king in the hopes of changing the situation. This is an arduous journey that involves interactions with strangers, battles, and more on the way to the king.
 
-The game provides the player with multiple options to choose from, providing the ability of negatively or positively impacting the gameplay and leading to various outcomes.
+The player of the game is given four options of character types to play as: the wizard, the ranger, the swordsman, or the guardian. The game provides the player with multiple options to choose from throughout the game, which change the course of the game. 
 
 ## Compiling and Running the Program
 ### How to Compile:
-In order to compile the game, ensure you have `clang` or `g++` installed on your system.
+In order to compile the game, ensure you have `g++` installed on your system.
 
 To compile the program, run the following command:
-`* make`
+`make`
+If this command produces an error, use the following command:
+ 'g++ main.cpp -I/opt/homebrew/Cellar/sfml/2.6.1/include -o main -L/opt/homebrew/Cellar/sfml/2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system'
 
 ### How to Run:
 After compiling the program, use the following command to execute the game:
-`* ./main`
+`./main`
 
 ## Compatable OSes
-As of currently, this game has only been run and tested on MacOS systems.
+This game has only been run and tested on MacOS systems.
 
 ## System Requirements
-This game is able to be run on any system capable of running C++.
+This game requires a system that is capable of running C++ and SFML.
 
 ## Library Requirements
-This game uses the standard C++ library, along with:
+* Standard C++ library
 * The Simple and Fast Multimedia Library (SFML)
-* In order to run this game, you must ensure you have SFML downloaded on your system. To install SFML, use this link: https://www.sfml-dev.org/download.php
 
 ## Logical View
 
@@ -35,9 +36,6 @@ This game uses the standard C++ library, along with:
         -placeInStory: Integer
         -character: CharacterSuper
         -characterChoice[MAX_CHARACTER]: Button
-        Manages place in story, handling
-        all user interactions such as character 
-        selections and choices in the storyline.
     }
 
     class CombatNarrative{
@@ -56,11 +54,6 @@ This game uses the standard C++ library, along with:
     class Main{
         -backgroundImage: Texture
         -menu: Menu
-        Runs the display window,
-        continues to loop through
-        different screens including
-        any background images,
-        terminates when game is over. 
     }
     class CharacterSuper{
       -health: Integer
