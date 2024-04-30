@@ -12,5 +12,5 @@ jobs:
     steps:
     - name: Compile code
       run: |
-        g++ -std=c++17 -g *.cpp -o test
+        g++ main.cpp -I/opt/homebrew/Cellar/sfml/2.6.1/include -o main -L/opt/homebrew/Cellar/sfml/2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system
       
