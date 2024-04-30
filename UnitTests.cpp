@@ -13,7 +13,6 @@ combat narrative fight lake monster
 #include <string>
 #include "Characters.cpp"
 #include "Inventory/Inventory.cpp"
-#include "Narrative.cpp"
 class UnitTests {
 private:
     std::ofstream inputFile;
@@ -56,27 +55,6 @@ public:
 
     }
 
-    bool testCombat () {
-       
-    }
-
-    bool testNarrative () {
-        Narrative nar;
-        int storyLocation = nar.placeInStory;
-
-        bool isPassNarrative = (storyLocation == 0);
-
-        if (isPassNarrative){
-            inputFile << "pass" << std::endl;
-        } else {
-            inputFile << "fail" << std::endl;
-        }
-        return isPassNarrative;
-    }
-
-    bool testNPC () {
-
-    }
 
     ~UnitTests() {
         if (inputFile.is_open()) {

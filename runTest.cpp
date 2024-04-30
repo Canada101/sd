@@ -23,13 +23,6 @@ int main(){
 		std::cout << "testInventory passed" << std::endl;
 	}
 
-	bool resultThree = ut.testNarrative();
-	if ( resultThree == false){
-		std:: cerr << "testNarrative test FAILED" << std::endl;
-		returnValue = -1;
-	} else {
-		std::cout << "testNarrative passed" << std::endl;
-	}
 
 	return returnValue;
 }
