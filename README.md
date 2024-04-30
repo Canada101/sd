@@ -131,22 +131,21 @@ This game requires a system that is capable of running C++ and SFML.
 
 ```mermaid
 graph TD
-    A(Start) --> B(Character Selection)
-    B --> C{Ranger}
-    B --> D{Swordsman}
-    B --> E{Wizard}
-    B --> F{Guardian}
+    A(<< process >>
+    Main) --> B(<< process >>
+    Narrative)
+    B --> C{CombatNarrative}
+    B --> D{NPCNarrative}
     
-    C --> G(Village)
+    C --> G(CharacterSuper)
     D --> G
-    E --> G
-    F --> G
     
-    G --> H(Forest)
-    H --> I(Lake)
-    I --> J(Castle)
-    
-    J --> K(End Game)
+    G --> H(Inventory)
+
+I(<< Player Interface >>>)
+J(Window Display)-->I
+K(Buttons)-->I
+I-->A
 ```
 ## Use Case 
 
