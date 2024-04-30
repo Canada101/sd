@@ -1,20 +1,33 @@
-# Project Group 5 Video Game Read-Me
+# Project Group 5: Choose Your Adventure Game
 
-# How to Compile
-This game can be compiled with the following compilers:
-* clang
-* g++
+## Project Overview
+The goal of this project is to develop a version of a Choose Your Own Adventure game. The storyline takes you through various scenarios, such as: interacting with strangers, fighting monsters, and ending with the ultimate goal of confronting the king of the village.
 
-# Compatable OSes
-This game is compatible with both Windows and MacOS
+The game provides the player with multiple options to choose from, providing the ability of negatively or positively impacting the gameplay and leading to various outcomes.
 
-# System Requirements
-This game is able to be run on any system capable of running C++
+## Compiling and Running the Program
+### How to Compile:
+In order to compile the game, ensure you have `clang` or `g++` installed on your system.
 
-# Library Requirements
-This game currently uses the Standard C++ Library
+To compile the program, run the following command:
+`* make`
 
-# Logical View
+### How to Run:
+After compiling the program, use the following command to execute the game:
+`* ./main`
+
+## Compatable OSes
+As of currently, this game has only been run and tested on MacOS systems.
+
+## System Requirements
+This game is able to be run on any system capable of running C++.
+
+## Library Requirements
+This game uses the standard C++ library, along with:
+* The Simple and Fast Multimedia Library (SFML)
+* In order to run this game, you must ensure you have SFML downloaded on your system. To install SFML, use this link: https://www.sfml-dev.org/download.php
+
+## Logical View
 
 ```mermaid
   classDiagram
@@ -75,7 +88,7 @@ This game currently uses the Standard C++ Library
     CharacterSuper <|-- Wizard
 ```
 
-# Process View
+## Process View
 
 ```mermaid
 graph TD
@@ -96,7 +109,8 @@ graph TD
     
     J --> K(End Game)
 ```
-# Use Case 
+## Use Case 
+
 ```mermaid
 graph TD
   A(user) --> B(selects character)
