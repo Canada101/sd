@@ -14,9 +14,7 @@ private:
 
 public:
     Menu(){
-		if(!font.loadFromFile("arial.ttf")){
-
-		}
+		if(!font.loadFromFile("arial.ttf")){}
 
 		header.setFont(font);
 		header.setFillColor(Color::Blue);
@@ -60,12 +58,10 @@ public:
 						}
                     }				
                     break;
-
+                    
                 default:
                     break;
             }
         }
     }
-
-    
 };

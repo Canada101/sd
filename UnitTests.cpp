@@ -1,13 +1,3 @@
-/*
-tests to run
-character: getHealth
-inventory: isfull
-NPC narrative talktowoods character check output is correct for choice
-narrative test character selection
-combat narrative fight lake monster
-*/
-
-
 #include <iostream>
 #include <fstream>
 #include <string>

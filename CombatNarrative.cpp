@@ -17,8 +17,7 @@ class CombatNarrative{
     CombatNarrative(CharacterSuper* characterType){
         time = seconds(2);
 
-        if (!font.loadFromFile("arial.ttf")) {
-        }
+        if (!font.loadFromFile("arial.ttf")) {}
 
         character = characterType;
         for(int i = 0; i < 10; i++ ){
@@ -70,7 +69,7 @@ class CombatNarrative{
                                 instruction[3].setString("Your blow lands! The dragon loses " + to_string(damageToDragon) + " health.");
                                 window.draw(instruction[3]);
                                 window.display();
-                                sleep(t);
+                                sleep(time);
 					        }else if(choice[1].isClicked(mousePos)){
 						        window.clear();
                                 if((character->getHealth()+25)<100){
@@ -110,7 +109,6 @@ class CombatNarrative{
                 window.display();
                 sleep(time);
                 window.close();
-               
             }else if(dragonHealth<=0){
                 window.clear();
                 won = true;
@@ -217,7 +215,6 @@ class CombatNarrative{
                 sleep(time);
                 return won;
             }
-
         }
     }
     
@@ -287,7 +284,7 @@ class CombatNarrative{
                             }
                         }				
                         break;
-
+                        
                     default:
                         break;
                 }
@@ -313,7 +310,6 @@ class CombatNarrative{
                 sleep(time);
                 return won;
             }
-
         }
     }
 };

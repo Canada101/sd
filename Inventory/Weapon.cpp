@@ -15,9 +15,9 @@ public:
 
     Weapon(){}
 
-    Weapon(WeaponType wt){
-        this->weaponType = wt;
-        adjustStats(wt);
+    Weapon(WeaponType type){
+        this->weaponType = type;
+        adjustStats(type);
         equipped = false;
     };
 
@@ -43,8 +43,8 @@ public:
     }
 
     private:
-        void adjustStats(WeaponType wt){
-            switch (wt){
+        void adjustStats(WeaponType type){
+            switch (type){
             case BowandArrow: strength = 35, rarity = "Common";
             break;
             case HeavenSlasher: strength = 75, rarity = "Ultra Rare";

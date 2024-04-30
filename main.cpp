@@ -5,8 +5,7 @@ int main(){
     sf::RenderWindow window(sf::VideoMode(1000, 600), "DREAMY ADVENTURE");
 
     Texture backgroundImage;
-    if (!backgroundImage.loadFromFile("background.jpg")){
-    }
+    if (!backgroundImage.loadFromFile("background.jpg")){}
     Sprite backgroundSprite(backgroundImage);
 
     Menu menu;

@@ -12,9 +12,9 @@ public:
     string description;
     bool used; 
 
-    SpecialAbility(SpecialAbilities sa){
-        this->specialAbility = sa;
-        adjustSpecialAbilityStats(sa);
+    SpecialAbility(SpecialAbilities special){
+        this->specialAbility = special;
+        adjustSpecialAbilityStats(special);
         used = false;
     };
 
@@ -42,8 +42,8 @@ public:
     }
 
     private:
-        void adjustSpecialAbilityStats(SpecialAbilities sa){
-            switch (sa){
+        void adjustSpecialAbilityStats(SpecialAbilities special){
+            switch (special){
             case Fireball: description = "Produces a fireball from wand, dealing a large amount of damage";
             break;
             case KillerMove: description = "A killing move";

@@ -13,8 +13,7 @@ class NarrativeNPC{
     NarrativeNPC(){
         time = seconds(4);
 
-        if (!font.loadFromFile("arial.ttf")){
-        }
+        if (!font.loadFromFile("arial.ttf")){}
 
         for(int i = 0; i < 10; i++ ){
             instruction[i].setFont(font);
@@ -197,10 +196,7 @@ class NarrativeNPC{
                 }
             }
         }
-
-
     }
-
 
     void talkToLakeCharacter(RenderWindow &window){
 
@@ -220,7 +216,6 @@ class NarrativeNPC{
 
             window.display();
             
-
             Event event;
             while (window.pollEvent(event)) {
                 switch (event.type) {
@@ -349,7 +344,6 @@ class NarrativeNPC{
 
             window.display();
             
-
             Event event;
             while (window.pollEvent(event)) {
                 switch (event.type) {
@@ -421,8 +415,7 @@ class NarrativeNPC{
                                 conv[1].drawButton(window);
 
                                 window.display();
-                                
-                                
+                                 
                                 while(1){
                                     Event event2;
                                     while (window.pollEvent(event2)){
@@ -455,7 +448,6 @@ class NarrativeNPC{
                                         }
                                     }
                                 }
-
                             }
                         }				
                         break;

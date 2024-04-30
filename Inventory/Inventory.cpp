@@ -12,10 +12,12 @@ class Inventory{
 private:
     Weapon weapon;
     vector<SpecialAbility> specials; 
-    int inventoryCount = 0;
+    int inventoryCount;
 
 public:
-    Inventory(){}
+    Inventory(){
+        inventoryCount = 0;
+    }
 
     void addWeapon(Weapon w){
         weapon = w;
@@ -47,15 +49,14 @@ public:
     string displaySpecials(){
         string message;
         message = "\n=============List of Special Abilities=============\n";
-        for (int i = 0; i < specials.size(); i++)
-        {
+        for (int i = 0; i < specials.size(); i++){
             message += specials[i].getName() + (specials[i].used ? " avaliable": "|");
         }
         return message;
     }
 
     void addSpecial(SpecialAbility s){
-        if(isFull()) {
+        if(isFull()){
             cout<< "Inventory is now full!" << endl;
             return;
         }

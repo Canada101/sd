@@ -7,15 +7,17 @@ class Button{
 private:
     RectangleShape button;
     Text text;
-    Color idleColor = Color::White;
+    Color idleColor;
     Color hoverColor;
     
 public:
 
-    Button(){};
+    Button(){
+        idleColor = Color::White;
+    };
 
     Button(Vector2f pos, float width, float height, Font& font, string mess){
-
+        idleColor = Color::White;
         button.setPosition(pos);
         button.setSize(Vector2f(width, height));
         button.setFillColor(idleColor);
@@ -30,7 +32,6 @@ public:
 		float xPos = (pos.x + width / 2) - (text.getLocalBounds().width / 2);
 		float yPos = (pos.y + height / 2.5) - (text.getLocalBounds().height / 2);
 		text.setPosition(xPos, yPos);
-
     }
 
     void drawButton(RenderWindow &window){

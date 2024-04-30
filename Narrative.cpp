@@ -28,8 +28,7 @@ public:
         haveMap = false;
         haveOrb = false;       
 
-        if (!font.loadFromFile("arial.ttf")) {
-        }
+        if (!font.loadFromFile("arial.ttf")) {}
 
         header.setFont(font);
         header.setFillColor(sf::Color::Blue);
@@ -52,8 +51,7 @@ public:
         window.draw(header);
         for(int i = 0; i < MAX_CHARACTER; i++){
             characterChoice[i].drawButton(window);
-        }
-        
+        }   
     }
 
     void handleEvents(RenderWindow &window){
@@ -114,22 +112,22 @@ public:
             context.setFont(font);
             context.setFillColor(sf::Color::White);
             context.setPosition(Vector2f(10, 50));
-            context.setString("The world of Wables is treacherous...\nCountless villains scheme and only the powerful may live as they please\nYou stare at the large castle in the distance...\nA testament to the kings might the story progresses.\n");
+            context.setString("The world of Wables is treacherous...\nCountless villains scheme and only the powerful may live as they please.\nThe most powerful of all is the king, who uses his subjects as \nfodder for endless monsters.\n\n");
             Text context2;
             context2.setFont(font);
             context2.setFillColor(sf::Color::White);
             context2.setPosition(Vector2f(10, 200));
-            context2.setString("You woke in a village near the castle.\nYou will face many difficulties throughtout your journey\nbut find the castle and kill the king.\n");
+            context2.setString("You wake in a village near the castle.\nYou will face many difficulties throughtout your journey but your \nobjective is to find the castle and kill the king.\n\n");
             Text context3;
             context3.setFont(font);
             context3.setFillColor(sf::Color::White);
             context3.setPosition(Vector2f(10, 300));
-            context3.setString("There is some noise coming from your right where there are trees.");
+            context3.setString("As you walk down the streets of the village, a strange noise sounds\n from the nearby forest.");
             Text context4;
             context4.setFont(font);
             context4.setFillColor(sf::Color::White);
             context4.setPosition(Vector2f(10, 400));
-            context4.setString("You are getting curious and started heading towards the noise.\n");
+            context4.setString("Your curious nature leads to to investigate the noise.\n");
             Text ps;
             ps.setFont(font);
             ps.setFillColor(Color::White);
@@ -147,13 +145,13 @@ public:
 
             Event event;
             while (window.pollEvent(event)) {
-                switch (event.type) {
-                    case sf::Event::Closed:
-                            window.close();
-                            break;
-                    case sf::Event::MouseButtonPressed:
-                        window.clear();
-                        placeInStory++;
+                if(event.type == sf::Event::Closed){
+                    window.close();
+                    break;
+                }
+                else if(event.type == sf::Event::MouseButtonPressed){
+                    window.clear();
+                    placeInStory++;
                 }
             }
 
@@ -163,7 +161,7 @@ public:
             context.setFont(font);
             context.setFillColor(sf::Color::White);
             context.setPosition(Vector2f(10, 50));
-            context.setString("You reached a forest.\nYou encountered a suspicious looking stranger in the forest.\n");
+            context.setString("As you enter the forest, you locate the source of the noise:\n a suspicious stranger calling for help.");
 
             choice[0] = Button(Vector2f(50, 200), 400, 50, font, "Ignore the stranger");
             choice[1] = Button(Vector2f(50, 400), 400, 50, font, "Interact with the stranger");
@@ -173,7 +171,6 @@ public:
             choice[1].drawButton(window);
             window.display();
             
-
 
             Event event1;
             while (window.pollEvent(event1)) {
@@ -190,7 +187,7 @@ public:
                                 ps2.setFont(font);
                                 ps2.setFillColor(sf::Color::White);
                                 ps2.setPosition(Vector2f(10, 200));
-                                ps2.setString("While moving through the forest, you found the dragon\nand the dragon is about to attack you.\n");
+                                ps2.setString("\nWhile moving through the forest, you stumble upon a dragon, \nwhich readies iteself to attack.\n");
                                 window.draw(ps2);
                                 window.display();
                                 sleep(time);
@@ -204,12 +201,12 @@ public:
                                 ps.setFont(font);
                                 ps.setFillColor(sf::Color::White);
                                 ps.setPosition(Vector2f(10, 100));
-                                ps.setString("After the interaction with the strangers,\nyou feel a sense of responsibility as a hero and\nyou head forward to look for the dragon.\n");
+                                ps.setString("\nAfter the interaction with the stranger, you feel a sense of \nresponsibility to do what you can for the village, so you\n head forward to look for the dragon.\n");
                                 Text ps2;
                                 ps2.setFont(font);
                                 ps2.setFillColor(sf::Color::White);
                                 ps2.setPosition(Vector2f(10, 300));
-                                ps2.setString("While moving through the forest, you found the dragon\nand the dragon is about to attack you.\n");
+                                ps2.setString("While moving through the forest, you stumble upon a dragon,\n which readies iteself to attack.\n");
                                 window.draw(ps);
                                 window.draw(ps2);
                                 window.display();
@@ -224,13 +221,14 @@ public:
                         break;
                 }
             }
+
         }else if(placeInStory == 2){
             window.clear();
             Text context;
             context.setFont(font);
             context.setFillColor(sf::Color::White);
             context.setPosition(Vector2f(10, 100));
-            context.setString("After defeating the dragon, you continue on your way,\nuntil you notice a piece of paper on the ground.");
+            context.setString("\nAfter defeating the dragon, you continue on your way,\n until you notice a piece of paper on the ground.\n");
             Button choice[2];
             choice[0] = Button(Vector2f(50,300), 300, 50, font, "Pick up the paper");
             choice[1] = Button(Vector2f(50,400), 200, 50, font, "Ignore it");
@@ -256,7 +254,7 @@ public:
                                 ps.setFont(font);
                                 ps.setFillColor(sf::Color::White);
                                 ps.setPosition(Vector2f(10, 100));
-                                ps.setString("The paper is a map that has the location of a auspicious lake,\nrumored to have special properties.\nA handwritten note on the map warns\nthat the lake contains severe danger.\nIntrigued by the map, you follow the directions\nto head in the direction of the lake.");
+                                ps.setString("The paper is a map that has the location of a auspicious lake,\nrumored to have special properties.\n\nA handwritten note on the map warns\nthat the lake contains severe danger.\n\nIntrigued by the map, you follow the directions\nto head in the direction of the lake.");
                                 character->addSpecialAbility(Map);
                                 window.draw(ps);
                                 window.display();
@@ -330,8 +328,7 @@ public:
                         break;
                 }
             }
-            
-                
+                   
         }else if(placeInStory == 3){
             Text context;
             context.setFont(font);
@@ -633,8 +630,7 @@ public:
                         break;
                 }
             }
-
-                
+      
         }else if(placeInStory == 6){
             window.clear();
             Button option[2];
@@ -723,6 +719,7 @@ public:
             sleep(time);
             bool killKing = combatNarrative.fightKing(window);
             placeInStory++;
+            
         }else if(placeInStory == 7){
             window.clear();
             Text context;
