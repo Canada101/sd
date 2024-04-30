@@ -16,7 +16,7 @@ jobs:
     - name: Install SFML
       run: brew install sfml
     - name: Compile main.cpp
-      run: make
+      run: g++ main.cpp -I/opt/homebrew/Cellar/sfml/2.6.1/include -o main -L/opt/homebrew/Cellar/sfml/2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system
     - name: Compile unit tests
       run: g++ runTest.cpp -o runTest
     - name: Run unit tests
