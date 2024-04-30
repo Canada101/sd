@@ -443,7 +443,6 @@ public:
                                 window.draw(ps);
                                 window.display();
                                 sleep(time);
-                                sleep(time);
                                 if(haveMap){
                                     window.clear();
                                     Text m;
