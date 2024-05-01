@@ -19,7 +19,7 @@ public:
         Guardian guardian;
         int health = guardian.getHealth();
 
-        // Check if the return value is an integer
+        // Check if the Guardian's health is initially set to 100
         bool isPassHealth = (health == 100);
 
         if (isPassHealth) {
@@ -34,7 +34,7 @@ public:
         Guardian guardianTwo;
         int armor = guardianTwo.getArmor();
 
-        // Check if the return value is an integer
+        // Check if the Guardian's armor is initially set to 75
         bool isPassArmor = (armor == 75);
 
         if (isPassArmor) {
@@ -49,7 +49,7 @@ public:
         Guardian guardianThree;
         int speed = guardianThree.getSpeed();
 
-        // Check if the return value is an integer
+        // Check if Guardian's speed is initially set to 25
         bool isPassSpeed = (speed == 25);
 
         if (isPassSpeed) {

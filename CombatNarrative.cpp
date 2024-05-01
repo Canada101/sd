@@ -26,6 +26,7 @@ class CombatNarrative{
         }
     }
 
+    //Displays fight with dragon. Returns true if the character wins and false if they lose
     bool fightDragon(RenderWindow &window){
         int dragonHealth = 100;
         
@@ -123,6 +124,7 @@ class CombatNarrative{
         }
     }
 
+    //Displays fight with lake monster. Returns true if the character wins and false if they lose
     bool fightLakeMonster(RenderWindow &window){
         int lakeMonsterHealth = 150;
 
@@ -218,6 +220,7 @@ class CombatNarrative{
         }
     }
     
+    //Displays fight with king. Returns true if the character wins and false if they lose
     bool fightKing(RenderWindow &window){
         int kingHealth = 200;
         bool won = false;
